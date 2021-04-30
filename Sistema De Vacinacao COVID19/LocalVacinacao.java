@@ -188,6 +188,6 @@ public class LocalVacinacao {
 	 * Método que retorna o local de vacinação e o horário de atendimento em String.
 	 */
 	public String toString() {
-		return "Local de vacinação:\nNome: "+getNome()+"\nHorario de atendimento: "+getHorarioAtendimento();
+		return "Local de vacina��o:\nNome: "+getNome()+"\nHorario de atendimento: "+getHorarioAtendimento();
 	}
 }
