@@ -97,6 +97,6 @@ public class Fabricante {
 	 * Método que retorna o nome, a eficácia (em %) e o número de doses por Ampola do Fabricante.
 	 */
 	public String toString() {
-		return "Fabricante:\nNome: "+getNome()+"\nEficácia: "+getEficacia()+"%"+"\nDoses por Ampola: "+getDosesPorAmpola();
+		return "Fabricante:\nNome: "+getNome()+"\nEfic�cia: "+getEficacia()+"%"+"\nDoses por Ampola: "+getDosesPorAmpola();
 	}
 }
