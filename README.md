@@ -18,7 +18,7 @@ A pandemia de COVID-19, uma doença respiratória aguda causada pelo coronavíru
 
 ## Desenvolvimento
 
-##### Grupos de prioridade que devem ser contemplados no sistema (levando em consideração o Plano Nacional de Vacinação)
+#### Grupos de prioridade que devem ser contemplados no sistema (levando em consideração o Plano Nacional de Vacinação)
 
 1. Pessoas com 60 anos ou mais institucionalizadas
 2. Povos indígenas vivendo em terras indígenas
@@ -29,7 +29,7 @@ A pandemia de COVID-19, uma doença respiratória aguda causada pelo coronavíru
 7. Pessoas de 70 a 64 anos
 8. Indivíduos com comorbidades
 
-##### Planejamento de atributos e métodos
+#### Planejamento de atributos e métodos
 
 <img src="https://lh5.googleusercontent.com/oNWfDhV6pnXP5Lc-1xbOxOOItxFs3xqe-ElFOgZ1fQxkczp2BhBEGL4AtSYGogfgYSoQ27hVLxoIPChbuZbl6x3K0bxCsEXAgvIPqGgey1Ps6e7I1Sgo36SHFBHXYDvQHfoYGwDb" alt="img" style="zoom: 80%;" />
 
@@ -37,11 +37,11 @@ Diagrama disponível neste [link](https://online.visual-paradigm.com/share.jsp?i
 
 :mag_right: Observação: Todas as classes terão incluídas os métodos Gets, Sets, To Strings e Equals.
 
-##### Planejamento dos relacionamentos
+#### Planejamento dos relacionamentos
 
 ![img](https://lh4.googleusercontent.com/ScQ8JtHLDqvczYQKn7Q6BJFeMkywh7Qd9Sv0R_9_I9QFo-jkdd_lunNP0CjdgI5Dr46ffCVFz6VxX9wanLhPMh7IH1erOpwbFsP2zz_j107_STjN_OGRhsKCRJGB9AJTBb7uvOqE)Diagrama disponível neste [link](https://online.visual-paradigm.com/share.jsp?id=313237383639362d32).
 
-##### Definição de classes
+#### Definição de classes
 
 - Pessoa
 
