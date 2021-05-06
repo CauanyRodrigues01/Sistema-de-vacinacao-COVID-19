@@ -1,27 +1,27 @@
 /**
- * <b>Ampola</b> √© a classe que armazena os atributos e m√©todos da Ampola da Vacina.
- * @author Pedro L√¥bo Nascimento
+ * <b>Ampola</b> È a classe que armazena os atributos e mÈtodos da Ampola da Vacina.
+ * @author Pedro LÙbo Nascimento
  * @date 26/04/2021
  */
 public class Ampola {
 
 	/**
-	 * <b>lote</b> √© o atributo que armazena o lote da Ampola.
+	 * <b>lote</b> È o atributo que armazena o lote da Ampola.
 	 */
 	private int lote;
 
 	/**
-	 * <b>Validade</b> √© o atibuto que armazena a Validade do lote de Ampolas.
+	 * <b>Validade</b> È o atibuto que armazena a Validade do lote de Ampolas.
 	 */
 	private String Validade;
 
 	/**
-	 * <b>fabricante</b> √© o atributo que armazena o Fabricante da Ampola.
+	 * <b>fabricante</b> È o atributo que armazena o Fabricante da Ampola.
 	 */
 	private Fabricante fabricante;
 	
 	/**
-	 * <b>Prazo</b> √© o atributo que armazena o Prazo de Validade da Ampola ap√≥s abertura do lote.
+	 * <b>Prazo</b> È o atributo que armazena o Prazo de Validade da Ampola apÛs abertura do lote.
 	 */
 	private String Prazo;
 	
@@ -40,7 +40,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que retorna o valor do lote da Ampola.
+	 * MÈtodo que retorna o valor do lote da Ampola.
 	 * @return O valor do lote.
 	 */
 	public int getLote() {
@@ -48,7 +48,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que altera o atributo lote.
+	 * MÈtodo que altera o atributo lote.
 	 * @param lote O novo lote da Ampola.
 	 */
 	public void setLote(int lote) {
@@ -56,7 +56,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que retorna o valor da Validade do lote.
+	 * MÈtodo que retorna o valor da Validade do lote.
 	 * @return A validade do lote.
 	 */
 	public String getValidade() {
@@ -64,7 +64,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo Validade.
+	 * MÈtodo que altera o valor do atributo Validade.
 	 * @param validade A nova Validade do lote.
 	 */
 	public void setValidade(String validade) {
@@ -72,7 +72,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que retorna o valor do Fabricante da Ampola.
+	 * MÈtodo que retorna o valor do Fabricante da Ampola.
 	 * @return O fabricante da Ampola.
 	 */
 	public Fabricante getFabricante() {
@@ -80,7 +80,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que altera o atributo fabricante.
+	 * MÈtodo que altera o atributo fabricante.
 	 * @param fabricante O novo fabricante da Ampola.
 	 */
 	public void setFabricante(Fabricante fabricante) {
@@ -88,7 +88,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que retorna o Prazo de Validade da Ampola.
+	 * MÈtodo que retorna o Prazo de Validade da Ampola.
 	 * @return O prazo de validade da Ampola.
 	 */
 	public String getPrazo() {
@@ -96,7 +96,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo Prazo.
+	 * MÈtodo que altera o valor do atributo Prazo.
 	 * @param prazo O novo prazo de validade da Ampola.
 	 */
 	public void setPrazo(String prazo) {
@@ -104,7 +104,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que compara se o objeto passado como par√¢metro √© do tipo Ampola.
+	 * MÈtodo que compara se o objeto passado como par‚metro È do tipo Ampola.
 	 * Caso o seja, ele compara o fabricante de duas classes Ampola.
 	 */
 	public boolean equals(Object obj) {
@@ -117,7 +117,7 @@ public class Ampola {
 	}
 
 	/**
-	 * M√©todo que retorna o lote, data de validade e prazo de vencimento da Ampola em String.
+	 * MÈtodo que retorna o lote, data de validade e prazo de vencimento da Ampola em String.
 	 */
 	public String toString() {
 		return "Ampola:\nLote: "+getLote()+"\nData de validade: "+getValidade()+"\nPrazo de vencimento: "+getPrazo();
