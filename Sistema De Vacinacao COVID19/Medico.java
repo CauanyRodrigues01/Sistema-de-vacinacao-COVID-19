@@ -40,8 +40,8 @@ public class Medico extends Pessoa implements ProfissionalSaude {
    * @param matricula O valor da matricula do Médico.
    * @param senha O valor da senha do Médico.
    */
-	public Medico(String nome, int cpf, String dataNascimento, Cidade cidade, int status, int tipoPrioridade, int crm, LocalVacinacao localVacinacao, int matricula, String senha) {
-    super(nome, cpf, dataNascimento, cidade, status, tipoPrioridade);
+	public Medico(String nome, int cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, int crm, LocalVacinacao localVacinacao, int matricula, String senha) {
+    super(nome, cpf, dataNascimento, cidade, tipoPrioridade);
 		this.crm = crm;
 		this.localVacinacao = localVacinacao;
 		this.matricula = matricula;
