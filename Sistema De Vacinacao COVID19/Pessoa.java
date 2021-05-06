@@ -29,7 +29,7 @@ public class Pessoa {
   /**
    * <b>status</b> é o atributo que armazena o status de imunização da Pessoa.
    */
-  private int status;
+  private int status = 2;
 
   /**
    * <b>tipoPrioridade</b> é o atributo que armazena o tipo de prioridade na
@@ -46,12 +46,11 @@ public class Pessoa {
 	 * @param status O valor do status de imunização da Pessoa.
 	 * @param tipoPrioridade O valor da prioridade na vacinação da Pessoa.
    */
-	public Pessoa(String nome, int cpf, String dataNascimento, Cidade cidade, int status, int tipoPrioridade) {
+	public Pessoa(String nome, int cpf, String dataNascimento, Cidade cidade, int tipoPrioridade) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;
 		this.cidade = cidade;
-    this.status = status;
 		this.tipoPrioridade = tipoPrioridade;
 	}
 	
