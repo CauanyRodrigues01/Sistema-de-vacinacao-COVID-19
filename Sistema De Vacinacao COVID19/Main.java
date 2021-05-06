@@ -25,10 +25,10 @@ class Main {
 	
 	    //Teste pessoa
 	    System.out.println();
-		Pessoa cauany = new Pessoa("cauany", 156094480, "29/06/1960", soledade, 0, 1);
+		Pessoa cauany = new Pessoa("cauany", 156094480, "29/06/1960", soledade, 1);
 		System.out.println(cauany.toString());
 			
-		Pessoa lobo = new Pessoa("lobo", 213343480, "29/06/1960", campinaGrande, 0, 2);
+		Pessoa lobo = new Pessoa("lobo", 213343480, "29/06/1960", campinaGrande, 2);
 		System.out.println(lobo.toString());
 			
 	    System.out.println("Cauany é igual a Lobo?");
@@ -36,10 +36,10 @@ class Main {
 		
 	    //Teste paciente
 	    System.out.println();
-		Paciente juliana = new Paciente("juliana", 847365748, "17/06/2013", soledade, 3, 8, 23873);
+		Paciente juliana = new Paciente("juliana", 847365748, "17/06/2013", soledade, 8, 23873);
 		System.out.println(juliana.toString());
 	
-		Paciente vitoria = new Paciente("vitoria", 2122220, "29/06/1978", campinaGrande, 0, 8, 87446);
+		Paciente vitoria = new Paciente("vitoria", 2122220, "29/06/1978", campinaGrande, 8, 87446);
 		System.out.println(vitoria.toString());
 			
 	    System.out.println("Juliana é igual a vitoria?");
@@ -47,10 +47,10 @@ class Main {
 			
 		//Teste Medico
 	    System.out.println();
-		Medico eduarda = new Medico("Eduarda", 13456789, "23/09/1990", soledade, 0, 4, 857463625, postinhoDoCentro, 354627, "123dofrau");
+		Medico eduarda = new Medico("Eduarda", 13456789, "23/09/1990", soledade, 4, 857463625, postinhoDoCentro, 354627, "123dofrau");
 		System.out.println(eduarda.toString());
 			
-		Medico josefa = new Medico("Josefa", 987654321,  "06/06/1992", campinaGrande, 0, 4, 123456789, clinica, 12121, "quatro00dois");
+		Medico josefa = new Medico("Josefa", 987654321,  "06/06/1992", campinaGrande, 4, 123456789, clinica, 12121, "quatro00dois");
 		System.out.println(josefa.toString());
 			
 	    System.out.println("eduarda é igual a josefa?");
@@ -59,10 +59,10 @@ class Main {
 	    //Teste enfermeiro
 	    System.out.println();
 	
-	    Enfermeiro marileide = new Enfermeiro("Marileide", 948576364, "04/12/2000", soledade, 0, 4, 98765, postinhoDoCentro, 12344, "4321dois");
+	    Enfermeiro marileide = new Enfermeiro("Marileide", 948576364, "04/12/2000", soledade, 4, 98765, postinhoDoCentro, 12344, "4321dois");
 	    System.out.println(marileide.toString());
 	    
-	    Enfermeiro carlos = new Enfermeiro("Carlos", 2536478, "23/02/1995", campinaGrande, 0, 4, 1236, clinica, 12345,"123vrau");
+	    Enfermeiro carlos = new Enfermeiro("Carlos", 2536478, "23/02/1995", campinaGrande, 4, 1236, clinica, 12345,"123vrau");
 	    System.out.println(carlos.toString());
 	
 	    System.out.println("marileide é igual a carlos?");
@@ -98,7 +98,7 @@ class Main {
 	  	Cidade saoPaulo = new Cidade("Sao Paulo","PB", 15, 3, 15);
 	  		
 	  	//Teste de uma pessoa nova que é indígena (4)	
-	  	Paciente luana = new Paciente("\nluana", 847365748, "17/06/2000", joaoPessoa, 0, 4, 23873);
+	  	Paciente luana = new Paciente("\nluana", 847365748, "17/06/2000", joaoPessoa, 4, 23873);
 	  		
 	  	luana.analisaPrioridade();
 	  	System.out.println("\nluana\nidade: " + luana.calculaIdade());
@@ -109,15 +109,28 @@ class Main {
 	  	System.out.println("prioridade_fila = "+luana.analisaPrioridade());
 	  		
 	  	//Teste de uma pessoa velha e institucionalizada (1)	
-	  	Paciente joana = new Paciente("joana", 2122220, "29/06/1940", saoPaulo, 0, 1, 87446);
+	  	Paciente joana = new Paciente("joana", 2122220, "29/06/1940", saoPaulo, 1, 87446);
 	  		
 	  	joana.analisaPrioridade();
 	  	System.out.println("\njoana\nidade: " + joana.calculaIdade());
-	  	
 	  		
 	  	System.out.println("faixa_etaria_75_ou_mais? "+joana.isFaixa_etaria_75_ou_mais());
 	  	System.out.println("faixa_etaria_74_a_64? "+joana.isFaixa_etaria_74_a_64());
 	  	System.out.println("faixa_etaria_60_ou_mais? "+joana.isFaixa_etaria_60_ou_mais());
 	  	System.out.println("prioridade_fila = "+joana.analisaPrioridade());
+	  	
+	  	// Teste de recebeDose()
+	  	System.out.println();
+	  	
+	  	System.out.println("coronavac tem "+coronavac.getDoses()+" doses");
+	  	System.out.println("Luana recebe uma dose de coronavac");
+	  	luana.recebeDose(coronavac);
+	  	System.out.println("Agora, coronavac tem "+coronavac.getDoses()+" doses");
+	  	System.out.println("Status de Luana: "+luana.getStatus());
+	  	System.out.println("Luana recebe outra dose de coronavac");
+	  	luana.recebeDose(coronavac);
+	  	System.out.println("Agora, coronavac tem "+coronavac.getDoses()+" doses");
+	  	System.out.println("Status de Luana: "+luana.getStatus());
+	  	
 	  }
 } 
