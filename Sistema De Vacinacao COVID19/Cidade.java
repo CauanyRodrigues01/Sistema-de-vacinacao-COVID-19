@@ -1,60 +1,55 @@
 import java.util.ArrayList;
 
 /**
- * <b>Cidade</b> Ã© a classe que armazena os atributos e mÃ©todos da Cidade do SistemaCovid.
+ * <b>Cidade</b> é a classe que armazena os atributos e métodos da Cidade do SistemaCovid.
  * @author Maria Eduarda Viana Cordeiro dos Santos
  * @date 28/04/2021
  */
 public class Cidade {
 
 	/**
-	 * <b>nome</b> Ã© o atributo que armazena o nome da Cidade.
+	 * <b>nome</b> é o atributo que armazena o nome da Cidade.
 	 */
 	private String nome;
 
 	/**
-	 * <b>UF</b> Ã© o atributo que armazena a UF (Unidade Federativa) da Cidade.
+	 * <b>UF</b> é o atributo que armazena a UF (Unidade Federativa) da Cidade.
 	 */
 	private String UF;
 
 	/**
-	 * <b>locaisVacinacao</b> Ã© o atributo que armazena os locais de vacinaÃ§Ã£o da Cidade.
+	 * <b>locaisVacinacao</b> é o atributo que armazena os locais de vacinação da Cidade.
 	 */
 	private ArrayList<LocalVacinacao> locaisVacinacao;
 
 	/**
-	 * <b>numTotalPessoa</b> Ã© o atributo que armazena o nÃºmero total de pessoas na Cidade.
+	 * <b>numTotalPessoa</b> é o atributo que armazena o número total de pessoas na Cidade.
 	 */
 	private int numTotalPessoas;
 
 	/**
-	 * <b>numPessoasImunizada</b> Ã© o atributo que armazena o nÃºmero de pessoas imunizadas na Cidade.
+	 * <b>numPessoasImunizada</b> é o atributo que armazena o número de pessoas imunizadas na Cidade.
 	 */
 	private int numPessoasImunizada;
 
 	/**
-	 * <b>numPessoasNaoImunizadas</b> Ã© o atributo que armazena o nÃºmero de pessoas nÃ£o imunizadas na Cidade.
-	 */
-	private int numPessoasNaoImunizadas;
-
-	/**
-	 * <b>pessoas</b> Ã© o atributo que armazena a lista de pessoas na Cidade.
+	 * <b>pessoas</b> é o atributo que armazena a lista de pessoas na Cidade.
 	 */
 	private ArrayList<Pessoa>pessoas;
 
 	/**
-	 * <b>estoque</b> Ã© o atributo que armazena o estoque de vacinas na Cidade.
+	 * <b>estoque</b> é o atributo que armazena o estoque de vacinas na Cidade.
 	 */
 	private int estoque;
 
 	/**
-	 * MÃ©todo que constrÃ³i um objeto do tipo Cidade.
+	 * Método que constrói um objeto do tipo Cidade.
 	 * @param nome O valor do nome da Cidade.
 	 * @param UF O valor da UF da Cidade.
 	 * @param numTotalPessoas O valor do numero total de pessoas na Cidade.
 	 * @param numPessoasImunizada O valor de pessoas imunizadas na Cidade.
 	 * @param estoque O valor do estoque na Cidade.
-	 * @param locaisVacinacao O valor dos locais de vacinaÃ§Ã£o da Cidade.
+	 * @param locaisVacinacao O valor dos locais de vacinação da Cidade.
 	 */
 	public Cidade(String nome, String UF, int numTotalPessoas, int numPessoasImunizada, int estoque) {
 		this.nome = nome;
@@ -63,11 +58,10 @@ public class Cidade {
 		this.numPessoasImunizada = numPessoasImunizada;
 		this.estoque = estoque;
 		this.locaisVacinacao =  new ArrayList<LocalVacinacao>();
-		this.pessoas = new ArrayList<Pessoa>();
 	}
 	
 	/**
-	 * MÃ©todo que retorna o nome da Cidade.
+	 * Método que retorna o nome da Cidade.
 	 * @return O nome da Cidade.
 	 */
 	public String getNome() {
@@ -75,7 +69,7 @@ public class Cidade {
 	}
 
 	/**
-	 * MÃ©todo que altera o valor do atributo nome.
+	 * Método que altera o valor do atributo nome.
 	 * @param nome O novo nome da Cidade.
 	 */
 	public void setNome(String nome) {
@@ -83,7 +77,7 @@ public class Cidade {
 	}
 
 	/**
-	 * MÃ©todo que retorna a UF da Cidade.
+	 * Método que retorna a UF da Cidade.
 	 * @return A UF da Cidade.
 	 */
 	public String getUF() {
@@ -91,41 +85,40 @@ public class Cidade {
 	}
 
 	/**
-	 * MÃ©todo que altera o valor do atributo UF
+	 * Método que altera o valor do atributo UF
 	 * @param uf A nova UF da Cidade.
 	 */
 	public void setUF(String uf) {
 		UF = uf;
 	}
 
-
 	/**
-	 * MÃ©todo que retorna o nÃºmero total de pessoas na Cidade.
-	 * @return O nÃºmero total de pessoas na Cidade.
+	 * Método que retorna o número total de pessoas na Cidade.
+	 * @return O número total de pessoas na Cidade.
 	 */
 	public int getNumTotalPessoas() {
 		return numTotalPessoas;
 	}
 
 	/**
-	 * MÃ©todo que altera o valor do atributo numTotalPessoas.
-	 * @param numTotalPessoas O novo nÃºmero total de pessoas na Cidade.
+	 * Método que altera o valor do atributo numTotalPessoas.
+	 * @param numTotalPessoas O novo número total de pessoas na Cidade.
 	 */
 	public void setNumTotalPessoas(int numTotalPessoas) {
 		this.numTotalPessoas = numTotalPessoas;
 	}
 
 	/**
-	 * MÃ©todo que retorna o nÃºmero de pessoas imunizadas na Cidade.
-	 * @return O nÃºmero de pessoas imunizadas na Cidade.
+	 * Método que retorna o número de pessoas imunizadas na Cidade.
+	 * @return O número de pessoas imunizadas na Cidade.
 	 */
 	public int getNumPessoasImunizada() {
 		return numPessoasImunizada;
 	}
 
 	/**
-	 * MÃ©todo que altera o valor do atributo numPessoasImunizada.
-	 * @param numPessoasImunizada O novo nÃºmero de pessoas imunizadas
+	 * Método que altera o valor do atributo numPessoasImunizada.
+	 * @param numPessoasImunizada O novo número de pessoas imunizadas
    * na Cidade.
 	 */
 	public void setNumPessoasImunizada(int numPessoasImunizada) {
@@ -133,40 +126,7 @@ public class Cidade {
 	}
 
 	/**
-	 * MÃ©todo que retorna o nÃºmero de pessoas nÃ£o imunizadas na Cidade.
-	 * @return O nÃºmero de pessoas nÃ£o imunizadas na Cidade.
-	 */
-	public int getNumPessoasNaoImunizadas() {
-		return numPessoasNaoImunizadas;
-	}
-
-	/**
-	 * MÃ©todo que altera o valor do atributo numPessoasNaoImunizadas.
-	 * @param numPessoasNaoImunizadas O novo nÃºmero de pessoas nÃ£o
-   * imunizadas na Cidade.
-	 */
-	public void setNumPessoasNaoImunizadas(int numPessoasNaoImunizadas) {
-		this.numPessoasNaoImunizadas = numPessoasNaoImunizadas;
-	}
-
-	/**
-	 * MÃ©todo que retorna a lista de pessoas na Cidade.
-	 * @return A lista de pessoas na Cidade.
-	 */
-	public ArrayList<Pessoa> getPessoas() {
-		return pessoas;
-	}
-
-	/**
-	 * MÃ©todo que altera o valor do atributo pessoas.
-	 * @param pessoas A nova lista de pessoas na Cidade.
-	 */
-	public void setPessoas(ArrayList<Pessoa> pessoas) {
-		this.pessoas = pessoas;
-	}
-
-	/**
-	 * MÃ©todo que retorna o estoque da Cidade.
+	 * Método que retorna o estoque da Cidade.
 	 * @return O estoque da Cidade.
 	 */
 	public int getEstoque() {
@@ -174,7 +134,7 @@ public class Cidade {
 	}
 
 	/**
-	 * MÃ©todo que altera o valor do atributo estoque.
+	 * Método que altera o valor do atributo estoque.
 	 * @param estoque O novo estoque da Cidade.
 	 */
 	public void setEstoque(int estoque) {
@@ -182,16 +142,16 @@ public class Cidade {
 	}
 
 	/**
-	 * MÃ©todo que retorna a lista de locais de vacinaÃ§Ã£o.
-	 * @return A lista de locais de vacinaÃ§Ã£o na Cidade.
+	 * Método que retorna a lista de locais de vacinação.
+	 * @return A lista de locais de vacinação na Cidade.
 	 */
 	public ArrayList<LocalVacinacao> getLocaisVacinacao() {
 		return locaisVacinacao;
 	}
 
 	/**
-	 * MÃ©todo que altera o valor do atributo locaisVacinacao.
-	 * @param locaisVacinacao A nova lista de locais de vacinaÃ§Ã£o
+	 * Método que altera o valor do atributo locaisVacinacao.
+	 * @param locaisVacinacao A nova lista de locais de vacinação
    * na Cidade.
 	 */
 	public void setLocaisVacinacao(ArrayList<LocalVacinacao> locaisVacinacao) {
@@ -199,7 +159,7 @@ public class Cidade {
 	}
 	
 	/**
-	 * MÃ©todo que compara se o objeto passado como parÃ¢metro Ã© do tipo Cidade.
+	 * Método que compara se o objeto passado como parâmetro é do tipo Cidade.
 	 * Caso o seja, ele compara o nome e UF de duas Cidades.
 	 */
 	public boolean equals(Object obj) {
@@ -216,5 +176,30 @@ public class Cidade {
 	 */
 	public String toString() {
 		return "Cidade: "+getNome()+"-"+getUF();
+  }
+  /**
+  * Metodo que adiciona um local de vacinação dentro da lista de locais de vacinação da cidade
+  */
+    public void addLocalVacinacao(LocalVacinacao local){
+		  this.locaisVacinacao.add(local);
 	}
+
+  /**
+  * Metodo que retorna quantas pessoas não estão imunizadas na cidade 
+  */
+  public int CalcularPessoaNaoImunizada(){
+		int pessoaNaoImunizadas = getNumTotalPessoas() - getNumPessoasImunizada();
+		return pessoaNaoImunizadas; 
+	}
+
+   /**
+  * Metodo que retorna quantos locais de vacinação existe na cidade
+  */
+  public int CalcularLocaisVacinacao() {
+		int NumLocaisVacinacao = locaisVacinacao.size();
+		return NumLocaisVacinacao;
+	}
+
+
+
 }
