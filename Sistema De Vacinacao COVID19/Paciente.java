@@ -71,9 +71,22 @@ public class Paciente extends Pessoa {
 	 * @param tipoPrioridade O valor do tipo de prioridade do Paciente herdado de Pessoa.
 	 * @param sus O valor do sus do Paciente.
 	 */
-	public Paciente(String nome, int cpf, String dataNascimento, Cidade cidade, int status, int tipoPrioridade, int sus) {
-	    super(nome, cpf, dataNascimento, cidade, status, tipoPrioridade);
+	public Paciente(String nome, int cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, int sus) {
+	    super(nome, cpf, dataNascimento, cidade, tipoPrioridade);
 	    this.sus = sus;
+	}
+	
+	public void recebeDose(Ampola ampola) {
+		
+		ampola.diminuiDose();
+		
+		// Alterar o status de Paciente para -1
+		// Status é inicializado igual a 2.
+		// Se o status era igual a 2, vai passar a ter somente 1, ou seja, está parcialmente vacinado.
+		// Se o status era igual a q, vai passar a ter 0, ou seja, está vacinado.
+		int novo_status = getStatus();
+		setStatus(novo_status - 1);
+		
 	}
 	
 	/**Método para definir qual prioridade o Paciente tem.
