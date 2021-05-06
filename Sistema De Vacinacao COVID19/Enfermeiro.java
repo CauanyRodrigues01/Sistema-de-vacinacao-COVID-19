@@ -35,13 +35,13 @@ public class Enfermeiro extends Pessoa implements ProfissionalSaude {
 	 * @param cidade O valor da cidade do Enfermeiro.
 	 * @param status O valor do status de imunização do Enfermeiro.
 	 * @param tipoPrioridade O valor da prioridade na vacinação do Enfermeiro.
-   * @param cre O valor da CRE do Enfermeiro.
-   * @param localVacinacao O valor do local de vacinação do Enfermeiro.
-   * @param matricula O valor da matricula do Enfermeiro.
-   * @param senha O valor da senha do Enfermeiro.
+	 * @param cre O valor da CRE do Enfermeiro.
+	 * @param localVacinacao O valor do local de vacinação do Enfermeiro.
+	 * @param matricula O valor da matricula do Enfermeiro.
+	 * @param senha O valor da senha do Enfermeiro.
 	 */
-	public Enfermeiro(String nome, int cpf, String dataNascimento, Cidade cidade, int status, int tipoPrioridade, int cre, LocalVacinacao localVacinacao, int matricula, String senha) {
-    super(nome, cpf, dataNascimento, cidade, status, tipoPrioridade);
+	public Enfermeiro(String nome, int cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, int cre, LocalVacinacao localVacinacao, int matricula, String senha) {
+    super(nome, cpf, dataNascimento, cidade, tipoPrioridade);
 		this.cre = cre;
 		this.localVacinacao = localVacinacao;
 		this.matricula = matricula;
