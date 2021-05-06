@@ -1,28 +1,28 @@
 /**
- * <b>Fabricante</b> √© a classe que cont√©m os m√©todos e atributos do Fabricante da vacina.
+ * <b>Fabricante</b> È a classe que contÈm os mÈtodos e atributos do Fabricante da vacina.
  * @author Pedro Lobo Nascimento
  * @date 26/04/2021
  */
 public class Fabricante {
 
 	/**
-	 * <b>eficacia</b> √© o atributo que cont√©m a efic√°cia (em porcentagem) do Fabricante.
+	 * <b>eficacia</b> È o atributo que contÈm a efic·cia (em porcentagem) do Fabricante.
 	 */
 	private double eficacia;
 
 	/**
-	 * <b>dosesPorAmpola</b> √© o atributo que cont√©m o n√∫mero de doses por Ampola do Fabricante.
+	 * <b>dosesPorAmpola</b> È o atributo que contÈm o n˙mero de doses por Ampola do Fabricante.
 	 */
 	private int dosesPorAmpola;
 
 	/**
-	 * <b>Nome</b> √© o atributo que cont√©m o nome do Fabricante.
+	 * <b>Nome</b> È o atributo que contÈm o nome do Fabricante.
 	 */
 	private String nome;
 
 	/**
-	 * M√©todo Construtor.
-	 * @param eficacia O valor da efic√°cia da vacina.
+	 * MÈtodo Construtor.
+	 * @param eficacia O valor da efic·cia da vacina.
 	 * @param dosesPorAmpola O valor das doses por Ampola da vacina.
 	 * @param Nome O valor do nome do Fabricante da vacina.
 	 */
@@ -33,15 +33,15 @@ public class Fabricante {
 	}
 
 	/**
-	 * M√©todo que retorna o valor da efic√°cia do Fabricante.
-	 * @return A efic√°cia do Fabricante.
+	 * MÈtodo que retorna o valor da efic·cia do Fabricante.
+	 * @return A efic·cia do Fabricante.
 	 */
 	public double getEficacia() {
 		return eficacia;
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo eficacia.
+	 * MÈtodo que altera o valor do atributo eficacia.
 	 * @param eficacia A nova eficacia do Fabricante.
 	 */
 	public void setEficacia(double eficacia) {
@@ -49,23 +49,23 @@ public class Fabricante {
 	}
 
 	/**
-	 * M√©todo que retorna o n√∫mero de doses por ampola do Fabricante.
-	 * @return O n√∫mero de doses por ampola do Faricante.
+	 * MÈtodo que retorna o n˙mero de doses por ampola do Fabricante.
+	 * @return O n˙mero de doses por ampola do Faricante.
 	 */
 	public int getDosesPorAmpola() {
 		return dosesPorAmpola;
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo dosesPorAmpola.
-	 * @param dosesPorAmpola O novo n√∫mero de doses por ampola.
+	 * MÈtodo que altera o valor do atributo dosesPorAmpola.
+	 * @param dosesPorAmpola O novo n˙mero de doses por ampola.
 	 */
 	public void setDosesPorAmpola(int dosesPorAmpola) {
 		this.dosesPorAmpola = dosesPorAmpola;
 	}
 
 	/**
-	 * M√©todo que retorna o valor do nome do Fabricante.
+	 * MÈtodo que retorna o valor do nome do Fabricante.
 	 * @return O nome do Fabricante.
 	 */
 	public String getNome() {
@@ -73,7 +73,7 @@ public class Fabricante {
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo nome.
+	 * MÈtodo que altera o valor do atributo nome.
 	 * @param nome O novo nome do Fabricante.
 	 */
 	public void setNome(String nome) {
@@ -81,7 +81,7 @@ public class Fabricante {
 	}
 
 	/**
-	 * M√©todo que compara se o objeto passado como par√¢metro √© do tipo Fabricante.
+	 * MÈtodo que compara se o objeto passado como par‚metro È do tipo Fabricante.
 	 * Caso o seja, ele compara o nome de duas classe Fabricante.
 	 */
 	public boolean equals(Object obj) {
@@ -94,7 +94,7 @@ public class Fabricante {
 	}
 
 	/**
-	 * M√©todo que retorna o nome, a efic√°cia (em %) e o n√∫mero de doses por Ampola do Fabricante.
+	 * MÈtodo que retorna o nome, a efic·cia (em %) e o n˙mero de doses por Ampola do Fabricante.
 	 */
 	public String toString() {
 		return "Fabricante:\nNome: "+getNome()+"\nEfic·cia: "+getEficacia()+"%"+"\nDoses por Ampola: "+getDosesPorAmpola();
