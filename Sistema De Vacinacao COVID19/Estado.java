@@ -1,74 +1,65 @@
 import java.util.ArrayList;
 
 /**
- * <b>Estado</b> √© a classe que armazena os atributos e m√©todos do Estado do SistemaCovid.
+ * <b>Estado</b> È a classe que armazena os atributos e mÈtodos do Estado do SistemaCovid.
  * @author Maria Eduarda Viana Cordeiro dos Santos
  * @date 28/04/2021
  */
 public class Estado {
 
 	/**
-	 * <b>UF</b> √© o atributo que armazena a UF (Unidade Federativa) do Estado.
+	 * <b>UF</b> È o atributo que armazena a UF (Unidade Federativa) do Estado.
 	 */
 	private String UF;
 
 	/**
-	 * <b>nome</b> √© o atributo que armazena o nome do Estado.
+	 * <b>nome</b> È o atributo que armazena o nome do Estado.
 	 */
 	private String nome;
 
 	/**
-	 * <b>cidades</b> √© o atributo que armazena a lista de cidades do Estado.
+	 * <b>cidades</b> È o atributo que armazena a lista de cidades do Estado.
 	 */
 	private ArrayList<Cidade> cidades;
 
 	/**
-	 * <b>numTotalPessoas</b> √© o atributo que armazena o n√∫mero total de pessoas do Estado.
+	 * <b>numTotalPessoas</b> È o atributo que armazena o n˙mero total de pessoas do Estado.
 	 */
 	private int numTotalPessoas;
 
 	/**
-	 * <b>numPessoasImunizadas</b> √© o atributo que armazena o n√∫mero de pessoas imunizadas do Estado.
+	 * <b>numPessoasImunizadas</b> È o atributo que armazena o n˙mero de pessoas imunizadas do Estado.
 	 */
 	private int numPessoasImunizada;
 
-	/**
-	 * <b>numPessoasNaoImunizadas</b> √© o atributo que armazena o n√∫mero de pessoas n√£o imunizadas do Estado.
-	 */
-	private int numPessoasNaoImunizadas;
 
 	/**
-	 * <b>estoque</b> √© o atributo que armazena o estoque de vacinas do Estado.
+	 * <b>estoque</b> È o atributo que armazena o estoque de vacinas do Estado.
 	 */
 	private int estoque;
 
 	/**
-	 * <b>locaisVacinacao</b> √© o atributo que armazena os locais de vacina√ß√£o do Estado.
+	 * <b>locaisVacinacao</b> È o atributo que armazena os locais de vacinaÁ„o do Estado.
 	 */
 	private int locaisVacinacao;
 	
 	/**
-	 * M√©todo que constr√≥i um objeto do tipo Estado.
+	 * MÈtodo que constrÛi um objeto do tipo Estado.
 	 * @param UF O valor da UF do Estado.
-	 * @param numTotalPessoas O valor do n√∫mero total de pessoas no Estado.
-	 * @param numPessoasImunizada O valor do n√∫mero de pessoas imunizadas no Estado.
-	 * @param numPessoasNaoImunizadas O valor do n√∫mero de pessoas nao imunizadas no Estado.
-	 * @param estoque O valor do estoque de vacinas do Estado.
-	 * @param locaisVacinacao O valor dos locais de vacina√ß√£o do Estado.
+	 * @param numTotalPessoas O valor do n˙mero total de pessoas no Estado.
+	 * @param numPessoasImunizada O valor do n˙mero de pessoas imunizadas no Estado.
 	 */
-	public Estado(String UF, String nome, int numTotalPessoas, int numPessoasImunizada, int numPessoasNaoImunizadas, int estoque, int locaisVacinacao) {
+	public Estado(String UF, String nome, int numTotalPessoas, int numPessoasImunizada) {
 		this.UF = UF;
 		this.nome = nome;
 		this.numTotalPessoas = numTotalPessoas;
 		this.numPessoasImunizada = numPessoasImunizada;
-		this.estoque = estoque;
-		this.locaisVacinacao = locaisVacinacao;
 		this.cidades = new ArrayList <Cidade>();
-		
+
 	}
 	
 	/**
-	 * M√©todo que retorna o nome do Estado.
+	 * MÈtodo que retorna o nome do Estado.
 	 * @return O nome do Estado.
 	 */
 	public String getNome() {
@@ -76,7 +67,7 @@ public class Estado {
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo nome.
+	 * MÈtodo que altera o valor do atributo nome.
 	 * @param nome O novo nome da Cidade.
 	 */
 	public void setNome(String nome) {
@@ -85,7 +76,7 @@ public class Estado {
 
 
 	/**
-	 * M√©todo que retorna a UF do Estado.
+	 * MÈtodo que retorna a UF do Estado.
 	 * @return A UF do Estado.
 	 */
 	public String getUF() {
@@ -93,7 +84,7 @@ public class Estado {
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo UF.
+	 * MÈtodo que altera o valor do atributo UF.
 	 * @param uF A nova UF do Estado.
 	 */
 	public void setUF(String uF) {
@@ -101,7 +92,7 @@ public class Estado {
 	}
 	
 	/**
-	 * M√©todo que retorna a lista de cidades do Estado.
+	 * MÈtodo que retorna a lista de cidades do Estado.
 	 * @return A lista de cidades do Estado.
 	 */
 	public ArrayList<Cidade> getCidades() {
@@ -109,7 +100,7 @@ public class Estado {
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo cidades.
+	 * MÈtodo que altera o valor do atributo cidades.
 	 * @param cidades A nova lista de cidades do Estado.
 	 */
 	public void setCidades(ArrayList<Cidade> cidades) {
@@ -117,23 +108,23 @@ public class Estado {
 	}
 
 	/**
-	 * M√©toro que retorna o n√∫mero total de pessoas no Estado.
-	 * @return O n√∫mero total de pessoas do Estado.
+	 * MÈtoro que retorna o n˙mero total de pessoas no Estado.
+	 * @return O n˙mero total de pessoas do Estado.
 	 */
 	public int getNumTotalPessoas() {
 		return numTotalPessoas;
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo numTotalPessoas.
-	 * @param numTotalPessoas O novo n√∫mero total de pessoas no Estado.
+	 * MÈtodo que altera o valor do atributo numTotalPessoas.
+	 * @param numTotalPessoas O novo n˙mero total de pessoas no Estado.
 	 */
 	public void setNumTotalPessoas(int numTotalPessoas) {
 		this.numTotalPessoas = numTotalPessoas;
 	}
 
 	/**
-	 * M√©todo que retorna o n√∫mero de pessoas imunizadas no Estado.
+	 * MÈtodo que retorna o n˙mero de pessoas imunizadas no Estado.
 	 * @return
 	 */
 	public int getNumPessoasImunizada() {
@@ -141,63 +132,15 @@ public class Estado {
 	}
 
 	/**
-	 * M√©todo que altera o valor do atributo numPessoasImunizada.
-	 * @param numPessoasImunizada O novo n√∫mero de pessoas imunizadas no Estado.
+	 * MÈtodo que altera o valor do atributo numPessoasImunizada.
+	 * @param numPessoasImunizada O novo n˙mero de pessoas imunizadas no Estado.
 	 */
 	public void setNumPessoasImunizada(int numPessoasImunizada) {
 		this.numPessoasImunizada = numPessoasImunizada;
 	}
-
-	/**
-	 * M√©todo que retorna o n√∫mero de pessoas n√£o imunizadas no Estado.
-	 * @return O n√∫mero de pessoas n√£o imunizadas no Estado.
-	 */
-	public int getNumPessoasNaoImunizadas() {
-		return numPessoasNaoImunizadas;
-	}
-
-	/**
-	 * M√©todo que altera o valor do atributo numPessoasNaoImunizadas.
-	 * @param numPessoasNaoImunizadas O novo n√∫mero de pessoas n√£o imunizadas no Estado.
-	 */
-	public void setNumPessoasNaoImunizadas(int numPessoasNaoImunizadas) {
-		this.numPessoasNaoImunizadas = numPessoasNaoImunizadas;
-	}
-
-	/**
-	 * M√©todo que retorna o estoque de vacinas do Estado.
-	 * @return O estoque de vacinas do Estado.
-	 */
-	public int getEstoque() {
-		return estoque;
-	}
-
-	/**
-	 * M√©todo que altera o valor do atributo estoque.
-	 * @param estoque O novo estoque de vacinas do Estado.
-	 */
-	public void setEstoque(int estoque) {
-		this.estoque = estoque;
-	}
-
-	/**
-	 * M√©todo que retorna os locais de vacina√ß√£o do Estado.
-	 * @return Os locais de vacina√ß√£o do Estado.
-	 */
-	public int getLocaisVacinacao() {
-		return locaisVacinacao;
-	}
-
-	/**
-	 * M√©todo que altera o valor do atributo LocaisVacinacao.
-	 * @param locaisVacinacao O novo n√∫mero de locais de vacina√ß√£o do Estado.
-	 */
-	public void setLocaisVacinacao(int locaisVacinacao) {
-		this.locaisVacinacao = locaisVacinacao;
-	}
 	
 	/**
-	 * M√©todo que compara se o objeto passado como par√¢metro √© do tipo Estado.
+	 * MÈtodo que compara se o objeto passado como par‚metro È do tipo Estado.
 	 * Caso o seja, ele compara a igualdade entre os nomes e UFs de duas classes Estado.
 	 */
 	public boolean equals(Object obj) {
@@ -210,9 +153,32 @@ public class Estado {
 	}
 
   /**
-	 * M√©todo que retorna o nome e UF do Estado em String.
+	 * MÈtodo que retorna o nome e UF do Estado em String.
 	 */
 	public String toString() {
 		return getNome()+"-"+getUF();
 	}
+
+  /**
+  * Metodo que adiciona uma cidade dentro da lista de cidades do estado
+  */
+  public void addCidade(Cidade cidade) {
+		this.cidades.add(cidade);
+	}
+
+  /**
+  * Metodo que retorna quantas pessoas n„o est„o imunizadas no Estado
+  */
+  public int CalcularPessoaNaoImunizada() {
+		int pessoaNaoImunizadas = getNumTotalPessoas() - getNumPessoasImunizada();
+		return pessoaNaoImunizadas; 
+	}
+
+  /*
+  public void CalcularVacinaNecessaria() {
+		// TODO Auto-generated method stub
+		falta implementar esse metodo
+	}
+  */
+
 }
