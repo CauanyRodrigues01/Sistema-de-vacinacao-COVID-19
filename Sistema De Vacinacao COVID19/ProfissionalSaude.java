@@ -1,23 +1,23 @@
 /**
- * <b>ProfissionalSaude</b> Ã© a classe que define os mÃ©todos que todo profissional de saÃºde do sistema deve implementar no SistemaCovid.
+ * <b>ProfissionalSaude</b> é a classe que define os métodos que todo profissional de saúde do sistema deve implementar no SistemaCovid.
  * @author Cauany Nunes Rodrigues
  */
 public interface ProfissionalSaude {
 	
   /**
-   * MÃ©todo que altera o valor do atributo LocalVacinacao.
+   * Método que altera o valor do atributo LocalVacinacao.
 	 * @param O novo localVacinacao do ProfissionalSaude.
 	 */
 	public void setLocalVacinacao(LocalVacinacao localVacinacao);
 
   /**
-   * MÃ©todo que altera o valor do atributo Matricula.
+   * Método que altera o valor do atributo Matricula.
 	 * @param A nova matricula do ProfissionalSaude.
 	 */
 	public void setMatricula(int matricula);
 
   /**
-   * MÃ©todo que altera o valor do atributo Senha.
+   * Método que altera o valor do atributo Senha.
 	 * @param A nova senha do ProfissionalSaude.
 	 */
 	public void setSenha(String senha);
