@@ -4,7 +4,7 @@
  * @date 26/04/2021
  */
 public class Ampola {
-
+	
 	/**
 	 * <b>lote</b> é o atributo que armazena o lote da Ampola.
 	 */
@@ -26,6 +26,12 @@ public class Ampola {
 	private String Prazo;
 	
 	/**
+	 * <b>doses</b> é o atributo que armazena a quantidade de doses que a Ampola tem.
+	 * Inicialmente uma Ampola fechada tem 10 doses.
+	 */
+	private int doses = 10;
+	
+	/**
 	 * Construtor da classe Ampola.
 	 * @param lote O valor do lote da Ampola.
 	 * @param Validade O valor da Validade da Ampola.
@@ -37,6 +43,13 @@ public class Ampola {
 		this.Validade = Validade;
 		this.fabricante = fabricante;
 		this.Prazo = Prazo;
+	}
+	
+	public void diminuiDose() {
+		
+		int novas_doses = getDoses();
+		// Diminui uma dose da ampola
+		setDoses(novas_doses - 1);
 	}
 
 	/**
@@ -101,6 +114,22 @@ public class Ampola {
 	 */
 	public void setPrazo(String prazo) {
 		Prazo = prazo;
+	}
+
+	/**
+	 * Método que retorna a quantidade de doses da Ampola.
+	 * @return doses As doses da Ampola.
+	 */
+	public int getDoses() {
+		return doses;
+	}
+
+	/**
+	 * Método que altera o valor dasc doses da Ampola.
+	 * @param doses As novas doses da Ampola.
+	 */
+	public void setDoses(int doses) {
+		this.doses = doses;
 	}
 
 	/**
