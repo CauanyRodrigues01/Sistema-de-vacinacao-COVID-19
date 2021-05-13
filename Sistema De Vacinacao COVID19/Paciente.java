@@ -1,14 +1,14 @@
-// Importação utilizada para formatar a data para análise da idade do Paciente.
+//Importação utilizada para formatar a data para análise da idade do Paciente.
 import java.text.SimpleDateFormat;
 
-// Importação utilizada para captar a data atual na ajuda do cálculo da idade do Paciente.
+//Importação utilizada para captar a data atual na ajuda do cálculo da idade do Paciente.
 import java.util.Date;
 
 /**
- * <b>Paciente</b> é a classe que armazena todos os atributos e métodos do Paciente do SistemaCovid.
- * @author Maria Eduarda Viana Cordeiro dos Santos
- * @date 27/04/2021
- */
+* <b>Paciente</b> é a classe que armazena todos os atributos e métodos do Paciente do SistemaCovid.
+* @author Maria Eduarda Viana Cordeiro dos Santos
+* @date 27/04/2021
+*/
 public class Paciente extends Pessoa {
 
 	/**
@@ -71,23 +71,11 @@ public class Paciente extends Pessoa {
 	 * @param tipoPrioridade O valor do tipo de prioridade do Paciente herdado de Pessoa.
 	 * @param sus O valor do sus do Paciente.
 	 */
-	public Paciente(String nome, int cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, int sus) {
-	    super(nome, cpf, dataNascimento, cidade, tipoPrioridade);
+	public Paciente(String nome, String cpf, String dataNascimento, Cidade cidade, LocalVacinacao localVacinacao, int tipoPrioridade, int sus) {
+	    super(nome, cpf, dataNascimento, cidade, localVacinacao, tipoPrioridade);
 	    this.sus = sus;
 	}
 	
-	public void recebeDose(Ampola ampola) {
-		
-		ampola.diminuiDose();
-		
-		// Alterar o status de Paciente para -1
-		// Status é inicializado igual a 2.
-		// Se o status era igual a 2, vai passar a ter somente 1, ou seja, está parcialmente vacinado.
-		// Se o status era igual a q, vai passar a ter 0, ou seja, está vacinado.
-		int novo_status = getStatus();
-		setStatus(novo_status - 1);
-		
-	}
 	
 	/**Método para definir qual prioridade o Paciente tem.
 	 * Os valores que prioridade pode ter é os números de 0 à 8: 
@@ -208,8 +196,8 @@ public class Paciente extends Pessoa {
 		// Precisaremos ter o ano como número para utilizá-lo nos futuros cálculos.
 		int num_ano_atual = Integer.parseInt(string_ano_atual);
 		 
-        int idade = num_ano_atual - num_ano_nascimento;
-        
+     int idade = num_ano_atual - num_ano_nascimento;
+     
 		return idade;
 	}
 	
@@ -372,7 +360,7 @@ public class Paciente extends Pessoa {
 	public void setFaixa_etaria_60_ou_mais(boolean faixa_etaria_60_ou_mais) {
 		this.faixa_etaria_60_ou_mais = faixa_etaria_60_ou_mais;
 	}
-	
+
 	/**
 	 * Método que compara se o objeto passado como parâmetro é do tipo Paciente.
 	 * Caso o seja, ele compara o sus de dois Pacientes.
@@ -385,12 +373,12 @@ public class Paciente extends Pessoa {
 			return true;
 		return false;
 	}
-  
+
 	/**
 	 * Método que retorna o nome e cpf do Paciente em String.
 	 */
 	public String toString() {
-		return "Paciente:\nNome: " + getNome() + ", Cpf: " + getCpf();
+		return  getNome();
 	}
 	
 }
