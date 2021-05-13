@@ -11,11 +11,6 @@ public class Fabricante {
 	private double eficacia;
 
 	/**
-	 * <b>dosesPorAmpola</b> é o atributo que contém o número de doses por Ampola do Fabricante.
-	 */
-	private int dosesPorAmpola;
-
-	/**
 	 * <b>Nome</b> é o atributo que contém o nome do Fabricante.
 	 */
 	private String nome;
@@ -26,9 +21,8 @@ public class Fabricante {
 	 * @param dosesPorAmpola O valor das doses por Ampola da vacina.
 	 * @param Nome O valor do nome do Fabricante da vacina.
 	 */
-	public Fabricante (double eficacia, int dosesPorAmpola, String nome) {
+	public Fabricante (double eficacia, String nome) {
 		this.eficacia = eficacia;
-		this.dosesPorAmpola = dosesPorAmpola;
 		this.nome = nome;
 	}
 
@@ -46,22 +40,6 @@ public class Fabricante {
 	 */
 	public void setEficacia(double eficacia) {
 		this.eficacia = eficacia;
-	}
-
-	/**
-	 * Método que retorna o número de doses por ampola do Fabricante.
-	 * @return O número de doses por ampola do Faricante.
-	 */
-	public int getDosesPorAmpola() {
-		return dosesPorAmpola;
-	}
-
-	/**
-	 * Método que altera o valor do atributo dosesPorAmpola.
-	 * @param dosesPorAmpola O novo número de doses por ampola.
-	 */
-	public void setDosesPorAmpola(int dosesPorAmpola) {
-		this.dosesPorAmpola = dosesPorAmpola;
 	}
 
 	/**
@@ -94,9 +72,9 @@ public class Fabricante {
 	}
 
 	/**
-	 * Método que retorna o nome, a eficácia (em %) e o número de doses por Ampola do Fabricante.
+	 * Método que retorna o nome, a eficácia (em %) do Fabricante.
 	 */
 	public String toString() {
-		return "Fabricante:\nNome: "+getNome()+"\nEficácia: "+getEficacia()+"%"+"\nDoses por Ampola: "+getDosesPorAmpola();
+		return getNome()+"\nEficácia: "+getEficacia()+"%";
 	}
 }
