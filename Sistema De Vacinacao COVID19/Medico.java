@@ -12,12 +12,6 @@ public class Medico extends Pessoa implements ProfissionalSaude {
 	private int crm;
 
   /**
-   * <b>localVacinacao</b> é o atributo que armazena o local de vacinação
-   * onde o Médico atua.
-   */
-	private LocalVacinacao localVacinacao;
-
-  /**
    * <b>matricula</b> é o atributo que armazena a matrícula do Médico.
    */
 	private int matricula;
@@ -40,22 +34,11 @@ public class Medico extends Pessoa implements ProfissionalSaude {
    * @param matricula O valor da matricula do Médico.
    * @param senha O valor da senha do Médico.
    */
-	public Medico(String nome, int cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, int crm, LocalVacinacao localVacinacao, int matricula, String senha) {
-    super(nome, cpf, dataNascimento, cidade, tipoPrioridade);
+	public Medico(String nome, String cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, LocalVacinacao localVacinacao, int crm, int matricula, String senha) {
+    super(nome, cpf, dataNascimento, cidade, localVacinacao, tipoPrioridade);
 		this.crm = crm;
-		this.localVacinacao = localVacinacao;
 		this.matricula = matricula;
 		this.senha = senha;
-	}
-
-  /**
-   * Método que altera o valor do atributo localVacinacao.
-   * @param O novo local de vacinação do Médico.
-   */
-	@Override
-	public void setLocalVacinacao(LocalVacinacao localVacinacao) {
-		this.localVacinacao = localVacinacao;
-		
 	}
 
   /**
@@ -94,14 +77,6 @@ public class Medico extends Pessoa implements ProfissionalSaude {
 	}
 
 	/**
-   * Método que retorna o local de vacinação do Médico.
-	 * @return O local de vacinação do Médico.
-	 */
-	 public LocalVacinacao getLocalVacinacao() {
-		return localVacinacao;
-	}
-
-	/**
    * Método que retorna a matrícula do Médico.
 	 * @return A matrícula do Médico.
 	 */
@@ -125,7 +100,7 @@ public class Medico extends Pessoa implements ProfissionalSaude {
 		if (!(obj instanceof Medico))
 			return false;
 		Medico obj2 = (Medico) obj;
-		if (obj2.getMatricula() == this.getMatricula())
+		if (obj2.getCrm() == this.getCrm())
 			return true;
 		return false;
 	}
@@ -134,7 +109,7 @@ public class Medico extends Pessoa implements ProfissionalSaude {
    * Método que retorna o nome e a matrícula do Médico em String.
    */
 	public String toString() {
-		return "Medico:\nNome: " + getNome() + ", Matricula: " + getMatricula();
+		return getNome()+"CRM: "+getCrm();
 	}
 	
 }
