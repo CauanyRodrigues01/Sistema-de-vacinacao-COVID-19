@@ -12,12 +12,6 @@ public class Enfermeiro extends Pessoa implements ProfissionalSaude {
 	private int cre;
 
   /**
-   * <b>localVacinacao</b> é o atributo que armazena o local de vacinação
-   * em que o Enfermeiro trabalha.
-   */
-	private LocalVacinacao localVacinacao;
-
-  /**
    * <b>matricula</b> é o atributo que armazena a matricula do Enfermeiro.
    */
 	private int matricula;
@@ -40,23 +34,13 @@ public class Enfermeiro extends Pessoa implements ProfissionalSaude {
 	 * @param matricula O valor da matricula do Enfermeiro.
 	 * @param senha O valor da senha do Enfermeiro.
 	 */
-	public Enfermeiro(String nome, int cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, int cre, LocalVacinacao localVacinacao, int matricula, String senha) {
-    super(nome, cpf, dataNascimento, cidade, tipoPrioridade);
+	public Enfermeiro(String nome, String cpf, String dataNascimento, Cidade cidade, int tipoPrioridade, int cre, LocalVacinacao localVacinacao, int matricula, String senha) {
+    super(nome, cpf, dataNascimento, cidade, localVacinacao, tipoPrioridade);
 		this.cre = cre;
-		this.localVacinacao = localVacinacao;
 		this.matricula = matricula;
 		this.senha = senha;
 	}
 
-  /**
-   * Método que altera o valor do atributo localVacinacao.
-   * @param O novo local de vacinação do Enfermeiro.
-   */
-	@Override
-	public void setLocalVacinacao(LocalVacinacao localVacinacao) {
-		this.localVacinacao = localVacinacao;
-		
-	}
   
   /**
    * Método que altera o valor do atributo matricula.
@@ -95,14 +79,6 @@ public class Enfermeiro extends Pessoa implements ProfissionalSaude {
 	}
 
 	/**
-   * Método que retorna o local de vacinação do Enfermeiro.
-	 * @return o local de vacinação do Enfermeiro.
-	 */
-	 public LocalVacinacao getLocalVacinacao() {
-		return localVacinacao;
-	}
-
-	/**
    * Método que retorna a matrícula do Enfermeiro.
 	 * @return A matrícula do Enfermeiro.
 	 */
@@ -126,7 +102,7 @@ public class Enfermeiro extends Pessoa implements ProfissionalSaude {
 		if (!(obj instanceof Enfermeiro))
 			return false;
 		Enfermeiro obj2 = (Enfermeiro) obj;
-		if (obj2.getMatricula() == this.getMatricula())
+		if (obj2.getCre() == this.getCre())
 			return true;
 		return false;
 	}
@@ -135,7 +111,7 @@ public class Enfermeiro extends Pessoa implements ProfissionalSaude {
    * Método que retorna o nome e matrícula do Enfermeiro em String.
    */
   public String toString() {
-		return "Enfermeiro:\nNome: " + getNome() + ", Matricula: " + getMatricula();
+		return  getNome()+"CRE: "+getCre();
 	}
 	
 }
