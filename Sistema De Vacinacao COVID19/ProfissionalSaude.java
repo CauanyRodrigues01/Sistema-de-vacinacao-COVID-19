@@ -3,12 +3,6 @@
  * @author Cauany Nunes Rodrigues
  */
 public interface ProfissionalSaude {
-	
-  /**
-   * Método que altera o valor do atributo LocalVacinacao.
-	 * @param O novo localVacinacao do ProfissionalSaude.
-	 */
-	public void setLocalVacinacao(LocalVacinacao localVacinacao);
 
   /**
    * Método que altera o valor do atributo Matricula.
