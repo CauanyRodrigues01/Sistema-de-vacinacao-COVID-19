@@ -56,6 +56,16 @@ abstract class Pessoa {
 		this.localVacinacao = localVacinacao;
 		this.tipoPrioridade = tipoPrioridade;
 	}
+
+	/**Método para definir qual prioridade a Pessoa tem.
+	 * @author Cauany Nunes Rodrigues
+	 * @return int - Número que indica a prioridade da Pessoa.
+	 */
+	public int analisaPrioridade() {
+		
+		return getTipoPrioridade();
+		
+	}
 	
 	/**
 	 * Método que altera o status da Pessoa e atualiza a dose da ampola.
