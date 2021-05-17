@@ -37,21 +37,70 @@ public class Cidade {
 	 */
 	private int estoque;
 
+
 	/**
 	 * Método que constrói um objeto do tipo Cidade.
 	 * @param nome O valor do nome da Cidade.
 	 * @param UF O valor da UF da Cidade.
-	 * @param numTotalPessoas O valor do numero total de pessoas na Cidade.
-	 * @param numPessoasImunizada O valor de pessoas imunizadas na Cidade.
-	 * @param estoque O valor do estoque na Cidade.
 	 * @param locaisVacinacao O valor dos locais de vacinação da Cidade.
 	 */
-	public Cidade(String nome, String UF, int numPessoasImunizada, int estoque) {
+	public Cidade(String nome, String UF) {
 		this.nome = nome;
 		this.UF = UF;
-		this.numPessoasImunizada = numPessoasImunizada;
-		this.estoque = estoque;
 		this.locaisVacinacao =  new ArrayList<LocalVacinacao>();
+	}
+
+	/**
+	 * Método que calcula o total de Pessoas, sejam elas médicos, enfermeiros e pacientes.
+	 * @author Cauany Nunes Rodrigues
+	 * @return o número total de pessoas.
+	 */
+	public int calculaPessoas() {
+		int numPessoas = 0;
+		for(int i = 0; i < getLocaisVacinacao().size(); i++) {
+			numPessoas += getLocaisVacinacao().get(i).calculaPessoas();
+		}
+		return numPessoas;
+	}
+	
+	/**
+	 * Método que calcula o número de pessoas totalmente imunizadas da Cidade.
+	 * @author Cauany Nunes Rodrigues
+	 * @return o número total de pessoas imunizadas.
+	 */
+	public int calculaPessoasImunizadas() {
+		int numPessoas = 0;
+		for(int i = 0; i < getLocaisVacinacao().size(); i++) {
+			numPessoas += getLocaisVacinacao().get(i).calculaPessoasImunizadas();
+		}
+		return numPessoas;
+	}
+	
+	/**
+	 * Método que calcula o número de pessoas parcialmente imunizadas da Cidade.
+	 * parcialmente imunizadas é quando só tomou uma dose.
+	 * @author Cauany Nunes Rodrigues
+	 * @return o número total de pessoas parcialmente imunizadas.
+	 */
+	public int calculaPessoasParcialmenteImunizadas() {
+		int numPessoas = 0;
+		for(int i = 0; i < getLocaisVacinacao().size(); i++) {
+			numPessoas += getLocaisVacinacao().get(i).calculaPessoasParcialmenteImunizadas();
+		}
+		return numPessoas;
+	}
+	
+	/**
+	 * Método que calcula o número de pessoas não imunizadas da Cidade.
+	 * @author Cauany Nunes Rodrigues
+	 * @return o número total de pessoas não imunizadas.
+	 */
+	public int calculaPessoasNaoImunizadas() {
+		int numPessoas = 0;
+		for(int i = 0; i < getLocaisVacinacao().size(); i++) {
+			numPessoas += getLocaisVacinacao().get(i).calculaPessoasNaoImunizadas();
+		}
+		return numPessoas;
 	}
 	
 	/**
@@ -61,15 +110,6 @@ public class Cidade {
 	public void addLocalVacinacao(LocalVacinacao local){
 		this.locaisVacinacao.add(local);
 	}
-	
-	/**
-	 * Metodo que retorna quantas pessoas não estão imunizadas na cidade.
-	 * @author Maria Eduarda Viana Cordeiro dos Santos. 
-	 */
-	/*public int CalcularPessoaNaoImunizada() {
-		int pessoaNaoImunizadas = getNumTotalPessoas() - getNumPessoasImunizada();
-		return pessoaNaoImunizadas; 
-	}*/
 	
 	/**
 	 * Metodo que retorna quantos locais de vacinação existe na cidade.
