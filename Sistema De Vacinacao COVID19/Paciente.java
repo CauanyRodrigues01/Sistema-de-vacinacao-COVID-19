@@ -91,6 +91,7 @@ public class Paciente extends Pessoa {
 	 * @author Cauany Nunes Rodrigues
 	 * @return int - Número que indica a prioridade do Paciente.
 	 */
+	@Override
 	public int analisaPrioridade() {
 		
 		// Tratando as informações do Paciente
@@ -98,7 +99,7 @@ public class Paciente extends Pessoa {
 		calculaFaixaEtaria();
 		
 		// As seguintes condições verificam os atributos e então definem as prioridades (de 0 à 8) que o Paciente vai usar na fila.
-		int prioridade_fila = 0;
+		int prioridade_fila = 9;
 		if (isFaixa_etaria_60_ou_mais() == true && isInstitucionalizado() == true) {
 			prioridade_fila = 1;
 		} else if (isComunidadeIndigena() == true) {
@@ -131,6 +132,7 @@ public class Paciente extends Pessoa {
 		 * O valor 3 indica que o Paciente é um Profissional da saúde;
 		 * O valor 4 indica que o Paciente é uma Pessoa de comunidade tradicional ribeirinha;
 		 * O valor 5 indica que o Paciente é uma Pessoa de comunidade tradicional quilombola;
+		 * O valor 6 indica que o Paciente é uma Pessoa com comorbidades;
 		 * O valor 0 indica que o Paciente não possui nenhuma das prioridades acima.
 		 */
 		int tipoPrioridade = getTipoPrioridade();
@@ -152,6 +154,9 @@ public class Paciente extends Pessoa {
 		if (tipoPrioridade == 5) {
 			setComunidadeQuilombola(true);
 		}
+		if (tipoPrioridade == 6 ) {
+			setComorbidade(true);
+		}
 		
 	}
 	
@@ -165,9 +170,10 @@ public class Paciente extends Pessoa {
 		//Verifica qual das três faixas etárias o Paciente faz parte, caso sim, o atributo referente à faixa etária recebe true.
 		if (idade >= 75) {
 			setFaixa_etaria_75_ou_mais(true);
-		} else if (idade >= 60) {
+		}
+		if (idade >= 60) {
 			setFaixa_etaria_60_ou_mais(true);
-			if (idade >= 74 && idade <= 64) {
+			if (idade >= 64 && idade <= 74) {
 				setFaixa_etaria_74_a_64(true);
 			}
 		}
@@ -196,7 +202,7 @@ public class Paciente extends Pessoa {
 		// Precisaremos ter o ano como número para utilizá-lo nos futuros cálculos.
 		int num_ano_atual = Integer.parseInt(string_ano_atual);
 		 
-     int idade = num_ano_atual - num_ano_nascimento;
+    int idade = num_ano_atual - num_ano_nascimento;
      
 		return idade;
 	}
@@ -378,7 +384,7 @@ public class Paciente extends Pessoa {
 	 * Método que retorna o nome e cpf do Paciente em String.
 	 */
 	public String toString() {
-		return  getNome();
+		return  getNome() + " CPF: " + getCpf();
 	}
 	
 }
