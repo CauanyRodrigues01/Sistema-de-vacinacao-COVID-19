@@ -109,7 +109,7 @@ public class Medico extends Pessoa implements ProfissionalSaude {
    * Método que retorna o nome e a matrícula do Médico em String.
    */
 	public String toString() {
-		return getNome()+"CRM: "+getCrm();
+		return getNome() +  " CPF: " + getCpf();
 	}
 	
 }
