@@ -4,9 +4,17 @@
  * @date 26/04/2021
  */
 public class Ampola {
-	
-	private int id;
-	
+
+  /**
+	 * <b>fabricante</b> é o atributo que armazena o nome do fabricante da Ampola.
+	 */
+  private String fabricante;
+
+  /**
+	 * <b>eficacia</b> é o atributo que contém a eficácia (em porcentagem) da dose da ampola.
+	 */
+	private String eficacia;
+		
 	/**
 	 * <b>lote</b> é o atributo que armazena o lote da Ampola.
 	 */
@@ -17,10 +25,6 @@ public class Ampola {
 	 */
 	private String Validade;
 
-	/**
-	 * <b>fabricante</b> é o atributo que armazena o Fabricante da Ampola.
-	 */
-	private Fabricante fabricante;
 	
 	/**
 	 * <b>Prazo</b> é o atributo que armazena o Prazo de Validade da Ampola após abertura do lote.
@@ -40,10 +44,11 @@ public class Ampola {
 	 * @param Prazo O valor da Validade do lote.
 	 * @param fabricante O valor do fabricante da Ampola.
 	 */
-	public Ampola (int lote, String Validade, String Prazo, Fabricante fabricante) {
+	public Ampola (String fabricante, String eficacia, int lote, String Validade, String Prazo) {
+    this.fabricante = fabricante;
+    this.eficacia = eficacia;
 		this.lote = lote;
 		this.Validade = Validade;
-		this.fabricante = fabricante;
 		this.Prazo = Prazo;
 	}
 	
@@ -93,7 +98,7 @@ public class Ampola {
 	 * Método que retorna o valor do Fabricante da Ampola.
 	 * @return O fabricante da Ampola.
 	 */
-	public Fabricante getFabricante() {
+	public String getFabricante() {
 		return fabricante;
 	}
 
@@ -101,8 +106,24 @@ public class Ampola {
 	 * Método que altera o atributo fabricante.
 	 * @param fabricante O novo fabricante da Ampola.
 	 */
-	public void setFabricante(Fabricante fabricante) {
+	public void setFabricante(String fabricante) {
 		this.fabricante = fabricante;
+	}
+
+  /**
+	 * Método que retorna o valor da eficácia do Fabricante.
+	 * @return A eficácia do Fabricante.
+	 */
+	public String getEficacia() {
+		return eficacia;
+	}
+
+	/**
+	 * Método que altera o valor do atributo eficacia.
+	 * @param eficacia A nova eficacia do Fabricante.
+	 */
+	public void setEficacia(String eficacia) {
+		this.eficacia = eficacia;
 	}
 
 	/**
