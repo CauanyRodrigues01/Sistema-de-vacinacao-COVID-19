@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * @author Pedro Lobo Nascimento
  * @date 26/04/2021
  */
-public class LocalVacinacao {
+public class LocalVacinacao{
 
 	/**
 	 * <b>nome</b> é o atributo que armazena o nome do Local de Vacinação
@@ -25,22 +25,12 @@ public class LocalVacinacao {
 	/**
 	 * <b>estoqueVacina</b> é o atributo que armazena o estoque de vacinas do Local de Vacinação.
 	 */
-	private int estoqueVacina;
+	private int estoqueVacina = 0;
 
 	/**
 	 * <b>Cidade<b> é o atributo que armazena a cidade do Local de Vacinação.
 	 */
 	private Cidade cidade;
-
-	/**
-	 * <b>Medico<b> é o atributo que armazena a lista de médicos do Local de Vacinação.
-	 */
-	private ArrayList<Medico> medicos;
-
-	/**
-	 * <b>Enfermeiro<b> é o atributo que armazena a lista de enfermeiros do Local de Vacinação.
-	 */
-	private ArrayList<Enfermeiro> enfermeiros;
 	
 	/**
 	 * <b>pessoas</b> é o atributo que armazena a lista de pessoas do Local de Vacinação.
@@ -61,13 +51,10 @@ public class LocalVacinacao {
 	 * @param estoqueVacina O valor do estoque de vacinas do Local de Vacinação.
 	 * @param cidade O valor da cidade do Local de Vacinação.
 	 */
-	public LocalVacinacao (String nome, String horarioAtendimento, int estoqueVacina, Cidade cidade) {
+	public LocalVacinacao (String nome, String horarioAtendimento, Cidade cidade) {
 		this.nome = nome;
 		this.horarioAtendimento = horarioAtendimento;
-		this.estoqueVacina = estoqueVacina;
 		this.cidade = cidade;
-		this.medicos = new ArrayList<Medico>();
-		this.enfermeiros = new ArrayList<Enfermeiro>();
 		this.pessoas = new ArrayList<Pessoa>();
 		this.ampolas = new ArrayList<Ampola>();
 	}
@@ -88,8 +75,8 @@ public class LocalVacinacao {
 		// A lista de ampolas vai receber novas instâncias de Ampola.
 		// O número de loops vai corresponder com o parâmetro numNovasAmpola.
 		// A lista vai receber ampolas iguas à aquela passada como parâmetro.
-		for (int n = 0; n <= numNovasAmpola; n++) {
-			adicionaAmpola(new Ampola(ampola.getLote(), ampola.getValidade(), ampola.getPrazo(), ampola.getFabricante()));
+		for (int n = 0; n < numNovasAmpola; n++) {
+			adicionaAmpola(new Ampola(ampola.getFabricante(), ampola.getEficacia(), ampola.getLote(), ampola.getValidade(), ampola.getPrazo()));
 		}
 	}
 
@@ -125,30 +112,6 @@ public class LocalVacinacao {
 	public void adicionaAmpola(Ampola ampola) {
 		this.ampolas.add(ampola);
 	}
-
-	/**
-	 * Método que soma os elementos na lista de Médicos.
-	 * @author Pedro Lobo Nascimento
-	 */
-	public void AdicionarMedico(Medico medico) {
-		this.medicos.add(medico);
-	}
-	  
-	/**
-	 * Método que soma os elementos na lista de Enfermeiro.
-	 * @author Pedro Lobo Nascimento
-	 */
-	public void AdicionarEnfermeiro(Enfermeiro enfermeiro) {
-		this.enfermeiros.add(enfermeiro);
-	}
-	
-	/**
-	 * Método que soma a lista de Médicos e Enfermeiros.
-	 * @author Pedro Lobo Nascimento
-	 */
-	public int CalcularProfissionaisSaude(){
-		return medicos.size()+enfermeiros.size();
-	}
 	  
 	/**
 	 * Método que soma os elementos na lista de Médicos.
@@ -156,6 +119,61 @@ public class LocalVacinacao {
 	 */
 	public void AdicionarPessoa(Pessoa pessoa) {
 		this.pessoas.add(pessoa);
+	}
+	
+	/**
+	 * Método que calcula o total de Pessoas, sejam elas médicos, enfermeiros e pacientes.
+	 * @author Cauany Nunes Rodrigues
+	 * @return tamanho da lista de Pessoas.
+	 */
+	public int calculaPessoas() {
+		return getPessoas().size();
+	}
+	
+	/**
+	 * Método que calcula o número de pessoas totalmente imunizadas do local.
+	 * @author Cauany Nunes Rodrigues
+	 * @return o número total de pessoas imunizadas.
+	 */
+	public int calculaPessoasImunizadas() {
+		int numPessoas = 0;
+		for (int i = 0; i < getPessoas().size(); i++) {
+			if (getPessoas().get(i).getStatus() == 0) {
+				numPessoas += 1;
+			}
+		}
+		return numPessoas;
+	}
+	
+	/**
+	 * Método que calcula o número de pessoas parcialmente imunizadas do local.
+	 * parcialmente imunizadas é quando só tomou uma dose.
+	 * @author Cauany Nunes Rodrigues
+	 * @return o número total de pessoas parcialmente imunizadas.
+	 */
+	public int calculaPessoasParcialmenteImunizadas() {
+		int numPessoas = 0;
+		for (int i = 0; i < getPessoas().size(); i++) {
+			if (getPessoas().get(i).getStatus() == 1) {
+				numPessoas += 1;
+			}
+		}
+		return numPessoas;
+	}
+	
+	/**
+	 * Método que calcula o número de pessoas não imunizadas do Local.
+	 * @author Cauany Nunes Rodrigues
+	 * @return o número total de pessoas não imunizadas.
+	 */
+	public int calculaPessoasNaoImunizadas() {
+		int numPessoas = 0;
+		for (int i = 0; i < getPessoas().size(); i++) {
+			if (getPessoas().get(i).getStatus() == 2) {
+				numPessoas += 1;
+			}
+		}
+		return numPessoas;
 	}
 	
 	/**
@@ -239,38 +257,6 @@ public class LocalVacinacao {
 	}
 
 	/**
-	 * Método que retorna o valor da lista de médicos no Local de Vacinação.
-	 * @return A lista de médicos no Local de Vacinação.
-	 */
-	public ArrayList<Medico> getMedicos() {
-		return medicos;
-	}
-
-	/**
-	 * Método que altera o valor do atributo medicos.
-	 * @param medicos A nova lista de médicos no Local de Vacinação.
-	 */
-	public void setMedicos(ArrayList<Medico> medicos) {
-		this.medicos = medicos;
-	}
-
-	/**
-	 * Método que retorna o valor da lista de enfermeiros no Local de Vacinação.
-	 * @return A lista de enfermeiros no Local de Vacinação.
-	 */
-	public ArrayList<Enfermeiro> getEnfermeiros() {
-		return enfermeiros;
-	}
-
-	/**
-	 * Método que altera o valor do atributo enfermeiros.
-	 * @param enfermeiros A nova lista de enfermeiros no Local de Vacinação.
-	 */
-	public void setEnfermeiros(ArrayList<Enfermeiro> enfermeiros) {
-		this.enfermeiros = enfermeiros;
-	}
-
-	/**
 	 * Método que retorna as pessoas que fazem parte do Local de Vacinação.
 	 * @return A lista de pessoas do Local de Vacinação.
 	 */
@@ -319,7 +305,7 @@ public class LocalVacinacao {
 	 * Método que retorna o local de vacinação e o horário de atendimento em String.
 	 */
 	public String toString() {
-		return "localizado em "+ getCidade() +"\nHorario de atendimento: "+getHorarioAtendimento();
+		return  getNome() ;
 	} 
   
 }
