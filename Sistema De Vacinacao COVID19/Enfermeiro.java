@@ -111,7 +111,7 @@ public class Enfermeiro extends Pessoa implements ProfissionalSaude {
    * Método que retorna o nome e matrícula do Enfermeiro em String.
    */
   public String toString() {
-		return  getNome()+"CRE: "+getCre();
+		return  getNome() + " CPF: " + getCpf();
 	}
 	
 }
