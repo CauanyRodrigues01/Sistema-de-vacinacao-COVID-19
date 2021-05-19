@@ -2,6 +2,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+
+/*
+
+Exception in thread "main" java.lang.NumberFormatException: For input string: ""
+    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+    at java.base/java.lang.Integer.parseInt(Integer.java:662)
+    at java.base/java.lang.Integer.parseInt(Integer.java:770)
+    at Paciente.calculaIdade(Paciente.java:194)
+    at Paciente.calculaFaixaEtaria(Paciente.java:168)
+    at Paciente.analisaPrioridade(Paciente.java:99)
+    at FuncoesPrint.FimCadastroPaciente(FuncoesPrint.java:258)
+    at Main.main(Main.java:148)
+ * */
+
 public class Main {
 	public static void main(String[] args) {
 
@@ -91,8 +105,19 @@ public class Main {
                 FuncoesPrint.MenuPaciente();
                 System.out.print("Nome: "); String nome_paciente = sc.nextLine();
                 System.out.print("CPF: "); String cpf = sc.nextLine();
-                System.out.print("Data nascimento: "); String dataNascimento = sc.nextLine();
-								System.out.print("SUS: "); int sus = sc2.nextInt();
+                String dataNascimento = "";
+                while (true) {
+                	try {
+                    	System.out.print("Data nascimento: "); dataNascimento = sc.nextLine();
+                    	String teste = dataNascimento.substring(6);
+                    	break;
+                    } catch(java.lang.StringIndexOutOfBoundsException e) {
+                    	System.out.println("Formato de data não aceito. Digite uma data com o seguinte formmato: dd/mm/yyyy");
+                    }
+                }
+                
+                
+				System.out.print("SUS: "); int sus = sc2.nextInt();
                 System.out.print("Cidade: "); String cidade_paciente = sc.nextLine().toUpperCase();
                 if(cidades.containsKey(cidade_paciente) == false) {
                   //Chama função para cadrastar uma cidade ainda nao cadastrada, essa função retorna a cidade que logo abaixo vai para a lista de cidades
@@ -228,11 +253,11 @@ public class Main {
                 
               case "6":{ // Cadastro de Ampola 
                 FuncoesPrint.MenuAmpola();
-                System.out.print("Nome de Fabricante: "); String fabricante = sc.nextLine().toUpperCase();
+                System.out.print("Nome de Fabricante: "); String fabricante = sc2.nextLine().toUpperCase();
                 System.out.print("Eficacia: "); String eficacia = sc2.nextLine();
                 System.out.print("Lote: "); int lote = sc.nextInt();
                 System.out.print("Validade: "); String validade = sc2.nextLine();
-                System.out.print("Prazo: "); String prazo = sc.nextLine();
+                System.out.print("Prazo: "); String prazo = sc2.nextLine();
 
                 Ampola ampola = new Ampola(fabricante, eficacia, lote, validade, prazo);
                 ampolas.put(fabricante, ampola);
@@ -247,7 +272,7 @@ public class Main {
         }//case "1":
 
         case "2": { // Tela de atendimento
-					while (!opcao.equals("0")) {
+    					while (!opcao.equals("0")) {
             opcao = FuncoesPrint.PrintMenuAtendimento(); 
 						
 						switch(opcao) {
