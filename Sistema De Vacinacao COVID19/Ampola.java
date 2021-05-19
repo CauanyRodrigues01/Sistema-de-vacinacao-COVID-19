@@ -5,14 +5,14 @@
  */
 public class Ampola {
 
-  /**
-	 * <b>fabricante</b> é o atributo que armazena o nome do fabricante da Ampola.
-	 */
+	/**
+	* <b>fabricante</b> é o atributo que armazena o nome do fabricante da Ampola.
+	*/
   private String fabricante;
 
   /**
-	 * <b>eficacia</b> é o atributo que contém a eficácia (em porcentagem) da dose da ampola.
-	 */
+	* <b>eficacia</b> é o atributo que contém a eficácia (em porcentagem) da dose da ampola.
+	*/
 	private String eficacia;
 		
 	/**
@@ -38,15 +38,16 @@ public class Ampola {
 	private int doses = 10;
 	
 	/**
-	 * Construtor da classe Ampola.
+	 * 
+	 * @param fabricante O valor do fabricante da Ampola.
+	 * @param eficacia O valor da eficaca da Ampola
 	 * @param lote O valor do lote da Ampola.
 	 * @param Validade O valor da Validade da Ampola.
 	 * @param Prazo O valor da Validade do lote.
-	 * @param fabricante O valor do fabricante da Ampola.
 	 */
 	public Ampola (String fabricante, String eficacia, int lote, String Validade, String Prazo) {
-    this.fabricante = fabricante;
-    this.eficacia = eficacia;
+		this.fabricante = fabricante;
+		this.eficacia = eficacia;
 		this.lote = lote;
 		this.Validade = Validade;
 		this.Prazo = Prazo;
@@ -151,7 +152,7 @@ public class Ampola {
 	}
 
 	/**
-	 * Método que altera o valor dasc doses da Ampola.
+	 * Método que altera o valor das doses da Ampola.
 	 * @param doses As novas doses da Ampola.
 	 */
 	public void setDoses(int doses) {
@@ -172,6 +173,4 @@ public class Ampola {
 		return false;
 	}
 
-
-	
 }
