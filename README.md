@@ -1,6 +1,6 @@
 # :syringe: Sistema de Vacinação COVID-19 🦠
 
-A pandemia de COVID-19, uma doença respiratória aguda causada pelo coronavírus SARS-CoV-2, vem assombrando o mundo desde que foi identificada pela primeira vez em Wuhan, na província de Hubei, República Popular da China, em 31 de dezembro de 2019. Após quase um ano de pesquisas cientistas do mundo inteiro vêm trazendo diversas alternativas de vacina com diferentes níveis de confiabilidade e sendo divulgadas no mercado. As autoridades competentes já estabeleceram a prioridade da vacinação, no entanto, é necessário organizar a demanda, e para isto desenvolvemos um Sistema de Informação que coleciona, armazena, transmite e processa dados para o fazer em relação à quantidades de doses, pacientes, médicos, equipamentos, etc.
+A pandemia de COVID-19, uma doença respiratória aguda causada pelo coronavírus SARS-CoV-2, vem assombrando o mundo desde que foi identificada pela primeira vez em Wuhan, na província de Hubei, República Popular da China, em 31 de dezembro de 2019. Após quase um ano de pesquisas, cientistas do mundo inteiro vêm trazendo diversas alternativas de vacina com diferentes níveis de confiabilidade e sendo divulgadas no mercado. As autoridades competentes já estabeleceram a prioridade da vacinação, no entanto, é necessário organizar a demanda, e para isto desenvolvemos um Sistema de Informação que administra e controla desde a aquisição das vacinas até a sua aplicação fornecendo dados para que se faça eficaz o controle.
 
 ## ⚙️ Funcionalidades
 
