@@ -2,10 +2,11 @@ import java.util.ArrayList;
 
 /**
  * <b>LocalVacinacao</b> é a classe que armazena os atributos e métodos do Local de Vacinação do SistemaCovid.
+ * Ela implementa a interface InformationProcessor, assim recebendo todos os metodos dessa interface.
  * @author Pedro Lobo Nascimento
  * @date 26/04/2021
  */
-public class LocalVacinacao{
+public class LocalVacinacao implements InformationProcessor{
 
 	/**
 	 * <b>nome</b> é o atributo que armazena o nome do Local de Vacinação
@@ -16,11 +17,6 @@ public class LocalVacinacao{
 	 * <b>horarioAtendimento</b> é o atributo que armazena o horario de atendimento do Local de Vacinação.
 	 */
 	private String horarioAtendimento;
-
-	/**
-	 *<b>profissionaisSaude</b> é o atributo que armazena o número de profissionais da saúde no Local de Vacinação.
-	 */
-	private int profissionaisSaude;
 
 	/**
 	 * <b>estoqueVacina</b> é o atributo que armazena o estoque de vacinas do Local de Vacinação.
@@ -43,12 +39,9 @@ public class LocalVacinacao{
 	private ArrayList<Ampola> ampolas;
 	
 	/**
-	 * Métodos Construtores.
+	 * Método que constrói um objeto do tipo LocalVacinacao.
 	 * @param nome O valor do nome do Local de Vacinação.
 	 * @param horarioAtendimento O valor do horario de atendimento do Local de Vacinação.
-	 * @param profissionaisSaude O valor do número de profissionais de saúde do Local de Vacinação.
-	 * @param numPessoasNaoImunizada O valor do número de pessoas não imunizadas do Local de Vacinação.
-	 * @param estoqueVacina O valor do estoque de vacinas do Local de Vacinação.
 	 * @param cidade O valor da cidade do Local de Vacinação.
 	 */
 	public LocalVacinacao (String nome, String horarioAtendimento, Cidade cidade) {
@@ -114,7 +107,7 @@ public class LocalVacinacao{
 	}
 	  
 	/**
-	 * Método que soma os elementos na lista de Médicos.
+	 * Método que adiciona pessoas, sejam elas pacientes, medicos e enfermeiros na lista de pessoas.
 	 * @author Pedro Lobo Nascimento
 	 */
 	public void AdicionarPessoa(Pessoa pessoa) {
@@ -209,22 +202,6 @@ public class LocalVacinacao{
 	}
 	
 	/**
-	 * Método que retorna o número de profissionais de saúde do Local de Vacinação.
-	 * @return O número de profissionais de saúde do Local de Vacinação.
-	 */
-	public int getProfissionaisSaude() {
-		return profissionaisSaude;
-	}
-	
-	/**
-	 * Método que altera o valor do atributo profissionaisSaude.
-	 * @param profissionaisSaude O novo número de profissionais de saude do Local de Vacinação.
-	 */
-	public void setProfissionaisSaude(int profissionaisSaude) {
-		this.profissionaisSaude = profissionaisSaude;
-	}
-
-	/**
 	 * Método que retorna o valor do estoque de vacinas no Local de Vacinação
 	 * @return O valor do estoque de vacinas no Local de Vacinação.
 	 */
@@ -257,8 +234,8 @@ public class LocalVacinacao{
 	}
 
 	/**
-	 * Método que retorna as pessoas que fazem parte do Local de Vacinação.
-	 * @return A lista de pessoas do Local de Vacinação.
+	 * Método que retorna as ampolas que fazem parte do Local de Vacinação.
+	 * @return A lista de ampolas do Local de Vacinação.
 	 */
 	public ArrayList<Ampola> getAmpolas() {
 		return ampolas;
@@ -302,7 +279,7 @@ public class LocalVacinacao{
 	}
 
 	/**
-	 * Método que retorna o local de vacinação e o horário de atendimento em String.
+	 * Método que retorna o nome do local de vacinação em String.
 	 */
 	public String toString() {
 		return  getNome() ;
