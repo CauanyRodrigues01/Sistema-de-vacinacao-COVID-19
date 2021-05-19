@@ -3,15 +3,15 @@
  * @author Cauany Nunes Rodrigues
  */
 public interface ProfissionalSaude {
-
-  /**
-   * Método que altera o valor do atributo Matricula.
+	
+	/**
+	 * Método que altera o valor do atributo Matricula.
 	 * @param A nova matricula do ProfissionalSaude.
 	 */
 	public void setMatricula(int matricula);
-
-  /**
-   * Método que altera o valor do atributo Senha.
+	
+	/**
+	 * Método que altera o valor do atributo Senha.
 	 * @param A nova senha do ProfissionalSaude.
 	 */
 	public void setSenha(String senha);
