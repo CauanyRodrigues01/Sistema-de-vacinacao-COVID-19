@@ -2,10 +2,11 @@ import java.util.ArrayList;
 
 /**
  * <b>Cidade</b> é a classe que armazena os atributos e métodos da Cidade do SistemaCovid.
+ * Ela implementa a interface InformationProcessor, assim recebendo todos os metodos dessa interface.
  * @author Maria Eduarda Viana Cordeiro dos Santos
  * @date 28/04/2021
  */
-public class Cidade {
+public class Cidade implements InformationProcessor {
 
 	/**
 	 * <b>nome</b> é o atributo que armazena o nome da Cidade.
@@ -21,22 +22,6 @@ public class Cidade {
 	 * <b>locaisVacinacao</b> é o atributo que armazena os locais de vacinação da Cidade.
 	 */
 	private ArrayList<LocalVacinacao> locaisVacinacao;
-
-	/**
-	 * <b>numTotalPessoa</b> é o atributo que armazena o número total de pessoas na Cidade.
-	 */
-	private int numTotalPessoas;
-
-	/**
-	 * <b>numPessoasImunizada</b> é o atributo que armazena o número de pessoas imunizadas na Cidade.
-	 */
-	private int numPessoasImunizada;
-
-	/**
-	 * <b>estoque</b> é o atributo que armazena o estoque de vacinas na Cidade.
-	 */
-	private int estoque;
-
 
 	/**
 	 * Método que constrói um objeto do tipo Cidade.
@@ -153,39 +138,6 @@ public class Cidade {
 	}
 
 	/**
-	 * Método que retorna o número de pessoas imunizadas na Cidade.
-	 * @return O número de pessoas imunizadas na Cidade.
-	 */
-	public int getNumPessoasImunizada() {
-		return numPessoasImunizada;
-	}
-
-	/**
-	 * Método que altera o valor do atributo numPessoasImunizada.
-	 * @param numPessoasImunizada O novo número de pessoas imunizadas
-   * na Cidade.
-	 */
-	public void setNumPessoasImunizada(int numPessoasImunizada) {
-		this.numPessoasImunizada = numPessoasImunizada;
-	}
-
-	/**
-	 * Método que retorna o estoque da Cidade.
-	 * @return O estoque da Cidade.
-	 */
-	public int getEstoque() {
-		return estoque;
-	}
-
-	/**
-	 * Método que altera o valor do atributo estoque.
-	 * @param estoque O novo estoque da Cidade.
-	 */
-	public void setEstoque(int estoque) {
-		this.estoque = estoque;
-	}
-
-	/**
 	 * Método que retorna a lista de locais de vacinação.
 	 * @return A lista de locais de vacinação na Cidade.
 	 */
@@ -214,8 +166,9 @@ public class Cidade {
 			return true;
 		return false;
 	}
+	
 	/**
-	 * Metodo que retorna o nome e UF da Cidade em String.
+	 * Metodo que retorna o Nome e UF da Cidade em String.
 	 */
 	public String toString() {
 		return getNome()+"-"+getUF();
