@@ -57,7 +57,8 @@ abstract class Pessoa {
 		this.tipoPrioridade = tipoPrioridade;
 	}
 
-	/**Método para definir qual prioridade a Pessoa tem.
+	/**
+	 * Método para definir qual prioridade a Pessoa tem.
 	 * @author Cauany Nunes Rodrigues
 	 * @return int - Número que indica a prioridade da Pessoa.
 	 */
@@ -78,13 +79,13 @@ abstract class Pessoa {
 		getLocalVacinacao().getAmpolas().get(0).diminuiDose();
 		
 		// Status de Pessoa é inicializado igual a 2.
-		// Devemos entçao alterar o status de Paciente para -1 quando ele recebe uma dose.
+		// Devemos então alterar o status de Paciente para -1 quando ele recebe uma dose.
 		// Se o status era igual a 2, vai passar a ter somente 1, ou seja, está parcialmente vacinado.
 		// Se o status era igual a 1, vai passar a ter 0, ou seja, está vacinado.
 		int status = getStatus();
 		setStatus(status - 1);
 		
-		// Quando a Pessoa receber a dose demos analisar se ampola acabou ou não e então tomar as providências necessárias.
+		// Quando a Pessoa receber a dose devemos analisar se ampola acabou ou não e só então tomar as providências necessárias.
 		getLocalVacinacao().analisaAmpola();
 		
 	}
