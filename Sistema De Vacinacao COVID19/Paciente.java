@@ -1,7 +1,7 @@
 //Importação utilizada para formatar a data para análise da idade do Paciente.
 import java.text.SimpleDateFormat;
 
-//Importação utilizada para captar a data atual na ajuda do cálculo da idade do Paciente.
+//Importação utilizada para captar a data atual, na ajuda do cálculo da idade do Paciente.
 import java.util.Date;
 
 /**
@@ -67,7 +67,7 @@ public class Paciente extends Pessoa {
 	 * @param cpf O valor do cpf do Paciente herdade de Pessoa. 
 	 * @param dataNascimento O valor da data de nascimento do Paciente herdado de Pessoa.
 	 * @param cidade O valor da cidade do Paciente herdado de Pessoa.
-	 * @param status O valor do status do Paciente herdado de Pessoa que indica se está vacinado.
+	 * @param localVacinacao O valor do local de vacinação do Paciente herdado de Pessoa.
 	 * @param tipoPrioridade O valor do tipo de prioridade do Paciente herdado de Pessoa.
 	 * @param sus O valor do sus do Paciente.
 	 */
@@ -160,7 +160,7 @@ public class Paciente extends Pessoa {
 		
 	}
 	
-	/**Método que utiliza analisa em qual faixa etária o Paciente pertence.
+	/**Método que calcula em qual faixa etária o Paciente pertence.
 	 * @author Cauany Nunes Rodrigues
 	 */
 	public void calculaFaixaEtaria() {
@@ -202,7 +202,7 @@ public class Paciente extends Pessoa {
 		// Precisaremos ter o ano como número para utilizá-lo nos futuros cálculos.
 		int num_ano_atual = Integer.parseInt(string_ano_atual);
 		 
-    int idade = num_ano_atual - num_ano_nascimento;
+		int idade = num_ano_atual - num_ano_nascimento;
      
 		return idade;
 	}
@@ -371,6 +371,7 @@ public class Paciente extends Pessoa {
 	 * Método que compara se o objeto passado como parâmetro é do tipo Paciente.
 	 * Caso o seja, ele compara o sus de dois Pacientes.
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Paciente))
 			return false;
@@ -383,6 +384,7 @@ public class Paciente extends Pessoa {
 	/**
 	 * Método que retorna o nome e cpf do Paciente em String.
 	 */
+	@Override
 	public String toString() {
 		return  getNome() + " CPF: " + getCpf();
 	}
