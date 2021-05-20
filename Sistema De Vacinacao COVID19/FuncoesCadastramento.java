@@ -16,32 +16,20 @@ public class FuncoesCadastramento {
 		}
 		
 		System.out.println();
-	}
-	
-	//Essa função chama o menu que sera printado toda vez para o usuario ir cadastrando as opções abaixo
-	
+	}	
 	
 	//Essa função é chamada para cadastrar uma cidade que ainda não foi cadastrada
 	public static Cidade CadastroCidade(String cidade, HashMap <String, Cidade> cidades ) {
-    /*System.out.print("\n\nESSA CIDADE AINDA NÃO FOI CADASTRADA, É NECESSÁRIO CADASTRÁ-LA\n\n");
-    System.out.print("\nCADASTRO DE CIDADE - "+cidade+"\n");
-    String nome_cidade = cidade;
-    System.out.print("UF: "); String uf = sc2.nextLine().toUpperCase();
-    Cidade cidade_lvacinacao = new Cidade (nome_cidade,uf,numpessoasvacinadas,estoque_cidade);
-    Hashcidades = cidades;
-    System.out.print("\n\nFIM DO CADASTRO DE CIDADE - "+cidade+"\n\n");
-    return cidade_lvacinacao;*/
     FuncoesPrint.LimpaTela();
     FuncoesPrint.printTracos();
-		System.out.println("|ESSA CIDADE AINDA NÃO FOI CADASTRADA, É NECESSÁRIO CADASTRÁ-LA|");
+	System.out.println("|ESSA CIDADE AINDA NÃO FOI CADASTRADA, É NECESSÁRIO CADASTRÁ-LA|");
     FuncoesPrint.printTracos();
     System.out.println("\n");
-		//System.out.print("| CADASTRO "+cidade+"\n");
     String nome_cidade = cidade;
     FuncoesPrint.printTracos();
-		FuncoesPrint.CidadeFormatada(cidade);
+	FuncoesPrint.CidadeFormatada(cidade);
     FuncoesPrint.printTracos();
-		System.out.print("| UF: "); 
+	System.out.print("| UF: "); 
     String uf = sc2.nextLine().toUpperCase();
     FuncoesPrint.LimpaTela();
     Cidade cidade_lvacinacao = new Cidade (nome_cidade,uf);
@@ -49,10 +37,7 @@ public class FuncoesCadastramento {
     if (FuncoesPrint.FimCadastroCidade(nome_cidade, uf).equals("1")) {
       cidade_lvacinacao.setNome("ERRO");
       cidade_lvacinacao.setUF("ERRO");
-      
-      //cadastro = "0";
     }
-		//System.out.print("\n\nFIM DO CADASTRO DE CIDADE - "+cidade+"\n\n");
 		return cidade_lvacinacao;
 	}
 	
@@ -60,29 +45,22 @@ public class FuncoesCadastramento {
 	public static LocalVacinacao CadastroLocalVacinacao(String local, String cidade, String nome_cidadelvacinacao, String uf_cidadelvacinacao) {
     FuncoesPrint.LimpaTela();
     FuncoesPrint.printTracos();
-		System.out.println("|       ESSE LOCAL DE VACINAÇÃO AINDA NÃO FOI CADASTRADO       |");
+	System.out.println("|       ESSE LOCAL DE VACINAÇÃO AINDA NÃO FOI CADASTRADO       |");
     System.out.println("|                   É NECESSÁRIO CADASTRÁ-LO                   |");
     FuncoesPrint.printTracos();
     System.out.println("\n");
-		//System.out.print("| CADASTRO "+cidade+"\n");
     String nome_lvacinacao = local;
     FuncoesPrint.printTracos();
-		FuncoesPrint.CidadeFormatada(nome_lvacinacao);
+	FuncoesPrint.CidadeFormatada(nome_lvacinacao);
     FuncoesPrint.printTracos();
-		System.out.print("| Horario de Funcionamento: "); 
+	System.out.print("| Horario de Funcionamento: "); 
     String horario = sc2.nextLine().toUpperCase();
     FuncoesPrint.LimpaTela();
-    //FuncoesPrint.FimCadastroLVacinacao(nome_lvacinacao, horario, nome_cidadelvacinacao, uf_cidadelvacinacao);
     LocalVacinacao localVacinacao = new LocalVacinacao(nome_lvacinacao, horario, Hashcidades.get(cidade));
-    //Cidade cidade_lvacinacao = new Cidade (nome_cidade,uf);
-		//Hashcidades = cidades;
     if (FuncoesPrint.FimCadastroLVacinacao(nome_lvacinacao, horario, nome_cidadelvacinacao, uf_cidadelvacinacao).equals("1")) {
       localVacinacao.setNome("ERRO");
       localVacinacao.setHorarioAtendimento("ERRO");
-      
-      //cadastro = "0";
     }
-		//System.out.print("\n\nFIM DO CADASTRO DE CIDADE - "+cidade+"\n\n");
 		return localVacinacao;
 	}
 	
