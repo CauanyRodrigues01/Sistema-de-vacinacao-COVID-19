@@ -6,11 +6,12 @@ A pandemia de COVID-19, uma doença respiratória aguda causada pelo coronavíru
 
 - [x] Sistema de cadastramento
 - [x] Sistema de informações
-- [ ] Controle do estoque de cada local de vacinação
-- [ ] Controle do acesso do sistema
-- [ ] Controle das vacinas
-- [ ] Controle da fila de pessoas
-- [ ] Controle do status dos pacientes
+- [x] Controle do estoque de cada local de vacinação
+- [x] Controle do acesso do sistema
+- [x] Controle das vacinas
+- [x] Controle da fila de pessoas
+- [x] Controle do status dos pacientes
+- [ ] Remover as instâncias cadastradas
 
 ## 🛠️ Construído com
 
