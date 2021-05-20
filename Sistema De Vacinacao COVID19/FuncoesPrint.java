@@ -3,201 +3,191 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class FuncoesPrint {
-  static Scanner sc2 = new Scanner(System.in);
+	
+	static Scanner sc2 = new Scanner(System.in);
 	static Scanner sc = new Scanner(System.in);
-
-  public static String PrintPrioridade(Pessoa paciente){
-    String nivel_prioridade = "";
-
-    if ((paciente.analisaPrioridade() == 1) || (paciente.analisaPrioridade() == 2) || (paciente.analisaPrioridade() == 3)) {
-      nivel_prioridade = "Alta";
-    }
-    else if ((paciente.analisaPrioridade() == 4) || (paciente.analisaPrioridade() == 5) || (paciente.analisaPrioridade() == 6)) {
-      nivel_prioridade = "Média";
-    }
-    else if ((paciente.analisaPrioridade() == 7) || (paciente.analisaPrioridade() == 8)){
-      nivel_prioridade = "Baixa";
-    }
-    else {
-      nivel_prioridade = "Nenhuma";
-    }
-    return nivel_prioridade;
-  }
-
-  public static void CidadeFormatada(String nome_cidade){
-    String cidade_formatada = "";
-    for (int i = 0; i<nome_cidade.length()-1; i++){
-      char letra = nome_cidade.charAt(i);
-      cidade_formatada += letra;
-      if (letra!=' '){
-        cidade_formatada += " ";
-      }
-    }
-    cidade_formatada+=nome_cidade.charAt(nome_cidade.length()-1);
-    double rusbe = 64-cidade_formatada.length();
-    String espaco = "|";
-    String espaco2 = "";
-    for (int j = 0; j<Math.floor(rusbe/2)-1; j++){
-      espaco+=" ";
-    }
-    for (int k = 0; k<Math.round(rusbe/2)-1; k++){
-      espaco2+=" ";
-    }
-    espaco2+="|";
-    System.out.println(espaco+cidade_formatada+espaco2);
-  }
-
-  public static void CentralizaString(String centralizar) {
-    String espaco2="";
-    for (int k = 0; k<(64-centralizar.length()-1); k++){
-      espaco2+=" ";
-    }
-    espaco2+="|";
-    System.out.println(centralizar+espaco2);
-  }
-
-  public static void LimpaTela() {
-    for (int i =0; i<100; i++) {
-      System.out.print("\n");
-    }
-  }
-  
-  public static void printTracos() {
+	
+	public static String PrintPrioridade(Pessoa paciente){
+		String nivel_prioridade = "";
+		
+		if ((paciente.analisaPrioridade() == 1) || (paciente.analisaPrioridade() == 2) || (paciente.analisaPrioridade() == 3)) {
+			nivel_prioridade = "Alta";
+		} else if ((paciente.analisaPrioridade() == 4) || (paciente.analisaPrioridade() == 5) || (paciente.analisaPrioridade() == 6)) {
+			nivel_prioridade = "Média";
+		} else if ((paciente.analisaPrioridade() == 7) || (paciente.analisaPrioridade() == 8)){
+			nivel_prioridade = "Baixa";
+		} else {
+			nivel_prioridade = "Nenhuma";
+		}
+		return nivel_prioridade;
+	}
+	
+	public static void CidadeFormatada(String nome_cidade) {
+	    String cidade_formatada = "";
+	    for (int i = 0; i<nome_cidade.length()-1; i++) {
+	    	char letra = nome_cidade.charAt(i);
+	    	cidade_formatada += letra;
+	    	if (letra!=' ') {
+	    		cidade_formatada += " ";
+	    	}
+	    }
+	    cidade_formatada+=nome_cidade.charAt(nome_cidade.length()-1);
+	    double rusbe = 64-cidade_formatada.length();
+	    String espaco = "|";
+	    String espaco2 = "";
+	    for (int j = 0; j<Math.floor(rusbe/2)-1; j++) {
+	    	espaco+=" ";
+	    }
+	    for (int k = 0; k<Math.round(rusbe/2)-1; k++) {
+	    	espaco2+=" ";
+	    }
+	    espaco2+="|";
+	    System.out.println(espaco+cidade_formatada+espaco2);
+	}
+	
+	public static void CentralizaString(String centralizar) {
+		String espaco2="";
+		for (int k = 0; k<(64-centralizar.length()-1); k++) {
+			espaco2+=" ";
+		}
+		espaco2+="|";
+		System.out.println(centralizar+espaco2);
+	}
+	
+	public static void LimpaTela() {
+		for (int i =0; i<100; i++) {
+			System.out.print("\n");
+		}
+	}
+	
+	public static void printTracos() {
 		for (int i = 0; i < 64; i++) {
 			System.out.print("-");
 		}
 		System.out.println();
 	}
-
-  public static String PrintMenu() {
-    printTracos();
-    System.out.println("|                       B E M  V I N D O                       |");
-    printTracos();
+	
+	public static String PrintMenu() {
+		printTracos();
+		System.out.println("|                       B E M  V I N D O                       |");
+		printTracos();
 		System.out.println("| [1] Cadastramento                                            |");
 		System.out.println("| [2] Atendimento                                              |");
 		System.out.println("| [3] Estoque                                                  |");
-    System.out.println("| [4] Visualizar Informações                                   |");
+		System.out.println("| [4] Visualizar Informações                                   |");
 		System.out.println("| [0] Sair                                                     |");
-    printTracos();
-    System.out.print("\n  Digite a opção: ");
-		String res = sc.next();
-    LimpaTela();
-    return res;
-  }
-
-  public static String PrintMenuCadastro() {
-    System.out.print("\n");
 		printTracos();
-    System.out.println("|                  C A D A S T R A M E N T O                   |");
-    printTracos();
+		System.out.print("\n  Digite a opção: ");
+		String res = sc.next();
+		LimpaTela();
+		return res;
+	}
+	
+	public static String PrintMenuCadastro() {
+		System.out.print("\n");
+		printTracos();
+		System.out.println("|                  C A D A S T R A M E N T O                   |");
+		printTracos();
 		System.out.println("| [1] Cadastrar Cidade                                         |");
 		System.out.println("| [2] Cadastrar Local de Vacinação                             |");
 		System.out.println("| [3] Cadastrar Paciente                                       |");
-    System.out.println("| [4] Cadastrar Medico                                         |");
+		System.out.println("| [4] Cadastrar Medico                                         |");
 		System.out.println("| [5] Cadastrar Enfermeiro                                     |");
 		System.out.println("| [6] Cadastrar Ampola                                         |");
 		System.out.println("| [0] Retornar ao Menu                                         |");
 		printTracos();
 		System.out.print("\n  Digite a opção: ");
-    String opcao = sc.next();
-    LimpaTela();
+		String opcao = sc.next();
+		LimpaTela();
 		return opcao;
 	}
-
-  public static String PrintMenuAtendimento() {
-    System.out.print("\n");
+	
+	public static String PrintMenuAtendimento() {
+		System.out.print("\n");
 		printTracos();
-    System.out.println("|                    A T E N D I M E N T O                     |");
-    printTracos();
+		System.out.println("|                    A T E N D I M E N T O                     |");
+		printTracos();
 		System.out.println("| [1] Exibir Fila de Pacientes                                 |");
 		System.out.println("| [2] Vacinar Paciente                                         |");
 		System.out.println("| [0] Retornar ao Menu                                         |");
 		printTracos();
 		System.out.print("\n  Digite a opção: ");
-    String opcao = sc.next();
-    LimpaTela();
+		String opcao = sc.next();
+		LimpaTela();
 		return opcao;
 	}
-
-  public static String PrintMenuEstoque() {
-    printTracos();
-    CidadeFormatada("ESTOQUE");
-    printTracos();
-    System.out.println("| [1] Adicionar Estoque a um Local de Vacinação                |");
+	
+	public static String PrintMenuEstoque() {
+		printTracos();
+		CidadeFormatada("ESTOQUE");
+		printTracos();
+		System.out.println("| [1] Adicionar Estoque a um Local de Vacinação                |");
 		System.out.println("| [0] Retornar ao Menu                                         |");
-    printTracos();
-    System.out.print("  Digite a opção: ");
+		printTracos();
+		System.out.print("  Digite a opção: ");
 		String opcao = sc.next();
-    LimpaTela();
-    return opcao;
-  }
-
-  public static String PrintMenuInformacoes() {
-    printTracos();
-    CidadeFormatada("INFORMAÇÕES");
-    printTracos();
-    System.out.println("| [1] Listar Cidades                                           |");
-    System.out.println("| [2] Listar Locais de Vacinação                               |");
-    System.out.println("| [0] Retornar ao Menu                                         |");
-    printTracos();
-    System.out.print("  Digite a opção: ");
-    String opcao = sc.next();
-    LimpaTela();
-    return opcao;
-  }
-  public static void ExibirFila() {
-    CentralizaString("FILA:");
-    /*for(int b = 0;b < 10; b++){
-      String v = Integer.toString(b);
-      if(!(fila.get(v) == null)){
-        for(int j = 0;j < fila.get(v).size(); j++) {
-          System.out.println(" "+(fila.get(v)).get(j));
-        }
-      }
-		}*/
-  }
-  public static String MenuCidade() {
-    printTracos();
-    System.out.println("|              C A D A S T R O  D E  C I D A D E               |");
-    printTracos();
-    return "";
-  }
-
-  public static String FimCadastroCidade(String nome_cidade, String uf) {
-    LimpaTela();
-    printTracos();
-    System.out.println("|               C I D A D E  C A D A S T R A D A               |");
-    CidadeFormatada(nome_cidade);
-    printTracos();
-    String string_nome = "| Nome: "+nome_cidade;
-    CentralizaString(string_nome);
-
-    String string_uf = "| UF: "+uf;
-    CentralizaString(string_uf);
-
-    String continuar = "";
-    while(!continuar.equals("0") || !continuar.equals("1")){
-      printTracos();
-    
-    System.out.println("|               R E G I S T R A R  C I D A D E ?               |");
-    printTracos();
-      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
-      printTracos();
-      continuar = sc.next();
-      if (continuar.equals("0")) {
-        CadastroFeito();
-        break;
-      }
-      else if (continuar.equals("1")) {
-        CadastroCancelado();
-        break;
-      }
-      else{
-        PrintErro();
-      }
-    }
-    return continuar;
-  }
+		LimpaTela();
+		return opcao;
+	}
+	
+	public static String PrintMenuInformacoes() {
+		printTracos();
+		CidadeFormatada("INFORMAÇÕES");
+		printTracos();
+		System.out.println("| [1] Listar Cidades                                           |");
+		System.out.println("| [2] Listar Locais de Vacinação                               |");
+		System.out.println("| [0] Retornar ao Menu                                         |");
+		printTracos();
+		System.out.print("  Digite a opção: ");
+		String opcao = sc.next();
+		LimpaTela();
+		return opcao;
+	}
+	
+	public static void ExibirFila() {
+		CentralizaString("FILA:");
+	}
+	
+	public static String MenuCidade() {
+		printTracos();
+		System.out.println("|              C A D A S T R O  D E  C I D A D E               |");
+		printTracos();
+		return "";
+	}
+	
+	public static String FimCadastroCidade(String nome_cidade, String uf) {
+	    LimpaTela();
+	    printTracos();
+	    System.out.println("|               C I D A D E  C A D A S T R A D A               |");
+	    CidadeFormatada(nome_cidade);
+	    printTracos();
+	    String string_nome = "| Nome: "+nome_cidade;
+	    CentralizaString(string_nome);
+	
+	    String string_uf = "| UF: "+uf;
+	    CentralizaString(string_uf);
+	
+	    String continuar = "";
+	    while(!continuar.equals("0") || !continuar.equals("1")){
+	      printTracos();
+	    
+	    System.out.println("|               R E G I S T R A R  C I D A D E ?               |");
+	    printTracos();
+	    System.out.println("|        [0] Registrar                [1] Não Registrar        |");
+	    printTracos();
+	    continuar = sc.next();
+	    if (continuar.equals("0")) {
+	    	CadastroFeito();
+	        break;
+	     } else if (continuar.equals("1")) {
+	        CadastroCancelado();
+	        break;
+	      } else{
+	        PrintErro();
+	      }
+	    }
+	    return continuar;
+	}
 
   public static String FimCadastroLVacinacao(String nome_lvacinacao, String horario, String nome_cidadelvacinacao, String uf_cidadelvacinacao) {
     LimpaTela();
@@ -387,26 +377,26 @@ public class FuncoesPrint {
     String continuar = "";
 
     while(!continuar.equals("0") || !continuar.equals("1")){
-      printTracos();
-    
-    System.out.println("|           R E G I S T R A R  E N F E R M E I R O ?           |");
-    printTracos();
-      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
-      printTracos();
-      continuar = sc.next();
-      if (continuar.equals("0")) {
-        CadastroFeito();
-        break;
-      }
-      else if (continuar.equals("1")) {
-        enfermeiro.setNome("ERRO");
-        enfermeiro.setCpf("ERRO");
-        CadastroCancelado();
-        break;
-      }
-      else{
-        PrintErro();
-      }
+	      printTracos();
+	    
+	    System.out.println("|           R E G I S T R A R  E N F E R M E I R O ?           |");
+	    printTracos();
+	      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
+	      printTracos();
+	      continuar = sc.next();
+	      if (continuar.equals("0")) {
+	        CadastroFeito();
+	        break;
+	      }
+	      else if (continuar.equals("1")) {
+	        enfermeiro.setNome("ERRO");
+	        enfermeiro.setCpf("ERRO");
+	        CadastroCancelado();
+	        break;
+	      }
+	      else{
+	        PrintErro();
+	      }
     }
     return continuar;
   }
