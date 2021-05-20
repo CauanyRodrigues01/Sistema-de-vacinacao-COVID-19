@@ -4,13 +4,13 @@ A pandemia de COVID-19, uma doença respiratória aguda causada pelo coronavíru
 
 ## ⚙️ Funcionalidades
 
-- [ ] Controle do estoque de cada estado
-- [ ] Controle do estoque de cada hospital
+- [x] Sistema de cadastramento
+- [x] Sistema de informações
+- [ ] Controle do estoque de cada local de vacinação
 - [ ] Controle do acesso do sistema
 - [ ] Controle das vacinas
-- [ ] Controle da fila
+- [ ] Controle da fila de pessoas
 - [ ] Controle do status dos pacientes
-- [ ] Controle dos equipamentos disponíveis
 
 ## 🛠️ Construído com
 
@@ -29,17 +29,13 @@ A pandemia de COVID-19, uma doença respiratória aguda causada pelo coronavíru
 7. Pessoas de 70 a 64 anos
 8. Indivíduos com comorbidades
 
-#### Planejamento de atributos e métodos
+#### Planejamento dos relacionamentos
 
-<img src="https://lh5.googleusercontent.com/oNWfDhV6pnXP5Lc-1xbOxOOItxFs3xqe-ElFOgZ1fQxkczp2BhBEGL4AtSYGogfgYSoQ27hVLxoIPChbuZbl6x3K0bxCsEXAgvIPqGgey1Ps6e7I1Sgo36SHFBHXYDvQHfoYGwDb" alt="img" style="zoom: 80%;" />
+![](https://github.com/CauanyRodrigues01/Sistema-de-vacinacao-COVID-19/blob/main/uml.png)
 
 Diagrama disponível neste [link](https://online.visual-paradigm.com/share.jsp?id=313237383639362d32).
 
 :mag_right: Observação: Todas as classes terão incluídas os métodos Gets, Sets, To Strings e Equals.
-
-#### Planejamento dos relacionamentos
-
-![img](https://lh4.googleusercontent.com/ScQ8JtHLDqvczYQKn7Q6BJFeMkywh7Qd9Sv0R_9_I9QFo-jkdd_lunNP0CjdgI5Dr46ffCVFz6VxX9wanLhPMh7IH1erOpwbFsP2zz_j107_STjN_OGRhsKCRJGB9AJTBb7uvOqE)Diagrama disponível neste [link](https://online.visual-paradigm.com/share.jsp?id=313237383639362d32).
 
 #### Definição de classes
 
@@ -51,44 +47,52 @@ Diagrama disponível neste [link](https://online.visual-paradigm.com/share.jsp?i
 
   É a classe que representa as pessoas que estão para receber as doses da vacina e que consequentemente estão na fila para recebê-la. O sistema vai analisar que tipo de prioridade o paciente tem.
 
-- Profissional de Saúde
-
-  São as pessoas que estão no sistema não como pacientes, mas com o papel importante de aplicar as doses nas pessoas. Cada profissional possui um local de trabalho e acesso ao sistema. Podem ser médicos ou enfermeiros.
-
 - Médico
 
-  É a classe que representa um tipo de profissional de saúde.
+  É a classe que representa um tipo de profissional de saúde com acesso ao sistema.
 
 - Enfermeiro
 
-  É a classe que representa um tipo de profissional de saúde.
-
-- Estado
-- É a classe que representa um estado brasileiro. É uma classe importante para o controle de dados e informações, como o total de pessoas que estão ou não imunizadas na região e se há estoque necessário no local.
+  É a classe que representa um tipo de profissional de saúde com acesso ao sistema.
 
 - Cidade
 
-  É a classe que representa uma cidade brasileira. É uma classe importante para o controle de dados e informações, como o total de pessoas que estão ou não imunizadas na região e se há estoque necessário no local.
+  É a classe que representa uma cidade brasileira. É uma classe importante para o controle de dados e informações, como o total de pessoas que estão ou não imunizadas na região.
 
 - Local de Vacinação
 
-  É a classe que representa os locais de vacinação.
+  É a classe que representa os locais de vacinação. É uma classe importante para o controle de estoque, pois é nos locais de vacinação que as ampolas das vacinas estão armazenadas.
 
 - Ampola
 
-  Classe que corresponde ao vidro da vacina e que vai ter suas informações necessárias.
+  Classe que corresponde ao vidro da vacina com 10 doses cada e que vai ter suas informações necessárias.
 
-- Fabricante
+- Funções cadastramento
 
-  Classe que representa o fabricante da vacina e portanto, indica o tipo da vacina.
+  Classe que possui todos os métodos que serão chamadas em Cadastro.
+
+- Funções print
+
+  Classe que possui todos os métodos para printar a interface das telas.
+  DateErrorExceptionClasse que estende a classe Exception definindo uma exceção criada para o próprio sistema com o intuito de acusar algum erro para as datas.
+
+#### Definição de interfaces
+
+- Profissional de Saúde
+
+  Interface que define métodos que todo Médico e Enfermeiro, entidades importantes para o sistema, vão ter que implementar para ter o controle do acesso de vacinação.
+
+- Information Processor
+
+  Interface que define os métodos que toda Cidade e Local de Vacinação devem implementar no Sistema.
 
 ## ✒️ Autores
 
 Todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 - **Cauany Rodrigues** - *Desenvolvedora* - [Cauany Rodrigues](https://github.com/CauanyRodrigues01)
-- **Maria Eduarda Viana** - *Desenvolvedora* - [Maria Eduarda Viana]()
-- **Pedro Nascimento** - *Desenvolvedor; Documentação* - [Pedro Nascimento](https://github.com/m1thrandirr)
+- **Maria Eduarda Viana** - *Desenvolvedora* - [Maria Eduarda Viana](https://github.com/eduardaviana)
+- **Pedro Nascimento** - *Desenvolvedor* - [Pedro Nascimento](https://github.com/m1thrandirr)
 
 ## 📄 Licença
 
