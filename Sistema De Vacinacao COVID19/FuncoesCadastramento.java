@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-//Essa Classe possui todas as funções que serão chamadas em Cadrasto
+//Essa Classe possui todas as funções que serão chamadas em Cadastro
 public class FuncoesCadastramento {
 	static Scanner sc2 = new Scanner(System.in);
 	static Scanner sc = new Scanner(System.in);
@@ -57,16 +57,34 @@ public class FuncoesCadastramento {
 	}
 	
 	//Essa função é chamada para cadastrar um local de vacinação que ainda não foi cadastrado
-	public static LocalVacinacao CadastroLocalVacinacao(String local,String cidade) {
-		System.out.print("\n\nESSE LOCAL DE VACINAÇÃO AINDA NÃO FOI CADASTRADO, É NECESSÁRIO CADASTRÁ-LO.\n");
-		System.out.print("\nCADASTRO DE LOCAL DE VACINAÇÃO - "+local+"\n");
-		String nome_lvacinacao = local;
-		System.out.print("Horario de funcionamento: "); String horario = sc.nextLine();
-		LocalVacinacao localVacinacao = new LocalVacinacao(nome_lvacinacao, horario, Hashcidades.get(cidade));
-		System.out.print("\n\nFIM DO CADASTRO DE LOCAL DE VACINAÇÃO - "+local+"\n\n");
+	public static LocalVacinacao CadastroLocalVacinacao(String local, String cidade, String nome_cidadelvacinacao, String uf_cidadelvacinacao) {
+    FuncoesPrint.LimpaTela();
+    FuncoesPrint.printTracos();
+		System.out.println("|       ESSE LOCAL DE VACINAÇÃO AINDA NÃO FOI CADASTRADO       |");
+    System.out.println("|                   É NECESSÁRIO CADASTRÁ-LO                   |");
+    FuncoesPrint.printTracos();
+    System.out.println("\n");
+		//System.out.print("| CADASTRO "+cidade+"\n");
+    String nome_lvacinacao = local;
+    FuncoesPrint.printTracos();
+		FuncoesPrint.CidadeFormatada(nome_lvacinacao);
+    FuncoesPrint.printTracos();
+		System.out.print("| Horario de Funcionamento: "); 
+    String horario = sc2.nextLine().toUpperCase();
+    FuncoesPrint.LimpaTela();
+    //FuncoesPrint.FimCadastroLVacinacao(nome_lvacinacao, horario, nome_cidadelvacinacao, uf_cidadelvacinacao);
+    LocalVacinacao localVacinacao = new LocalVacinacao(nome_lvacinacao, horario, Hashcidades.get(cidade));
+    //Cidade cidade_lvacinacao = new Cidade (nome_cidade,uf);
+		//Hashcidades = cidades;
+    if (FuncoesPrint.FimCadastroLVacinacao(nome_lvacinacao, horario, nome_cidadelvacinacao, uf_cidadelvacinacao).equals("1")) {
+      localVacinacao.setNome("ERRO");
+      localVacinacao.setHorarioAtendimento("ERRO");
+      
+      //cadastro = "0";
+    }
+		//System.out.print("\n\nFIM DO CADASTRO DE CIDADE - "+cidade+"\n\n");
 		return localVacinacao;
 	}
-	
 	
 	//Essa função é chamada para colocar uma pessoa dentro da sua cidade na lista de cidades
 	public static HashMap<String, ArrayList<Pessoa>> PessoasNaCidade(String cidade, Pessoa pessoa) {
