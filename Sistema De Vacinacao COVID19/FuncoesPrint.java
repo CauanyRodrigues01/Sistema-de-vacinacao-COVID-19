@@ -1,9 +1,28 @@
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class FuncoesPrint {
   static Scanner sc2 = new Scanner(System.in);
 	static Scanner sc = new Scanner(System.in);
+
+  public static String PrintPrioridade(Pessoa paciente){
+    String nivel_prioridade = "";
+
+    if ((paciente.analisaPrioridade() == 1) || (paciente.analisaPrioridade() == 2) || (paciente.analisaPrioridade() == 3)) {
+      nivel_prioridade = "Alta";
+    }
+    else if ((paciente.analisaPrioridade() == 4) || (paciente.analisaPrioridade() == 5) || (paciente.analisaPrioridade() == 6)) {
+      nivel_prioridade = "Média";
+    }
+    else if ((paciente.analisaPrioridade() == 7) || (paciente.analisaPrioridade() == 8)){
+      nivel_prioridade = "Baixa";
+    }
+    else {
+      nivel_prioridade = "Nenhuma";
+    }
+    return nivel_prioridade;
+  }
 
   public static void CidadeFormatada(String nome_cidade){
     String cidade_formatada = "";
@@ -100,6 +119,32 @@ public class FuncoesPrint {
 		return opcao;
 	}
 
+  public static String PrintMenuEstoque() {
+    printTracos();
+    CidadeFormatada("ESTOQUE");
+    printTracos();
+    System.out.println("| [1] Adicionar Estoque a um Local de Vacinação                |");
+		System.out.println("| [0] Retornar ao Menu                                         |");
+    printTracos();
+    System.out.print("  Digite a opção: ");
+		String opcao = sc.next();
+    LimpaTela();
+    return opcao;
+  }
+
+  public static String PrintMenuInformacoes() {
+    printTracos();
+    CidadeFormatada("INFORMAÇÕES");
+    printTracos();
+    System.out.println("| [1] Listar Cidades                                           |");
+    System.out.println("| [2] Listar Locais de Vacinação                               |");
+    System.out.println("| [0] Retornar ao Menu                                         |");
+    printTracos();
+    System.out.print("  Digite a opção: ");
+    String opcao = sc.next();
+    LimpaTela();
+    return opcao;
+  }
   public static void ExibirFila() {
     CentralizaString("FILA:");
     /*for(int b = 0;b < 10; b++){
@@ -134,9 +179,9 @@ public class FuncoesPrint {
     while(!continuar.equals("0") || !continuar.equals("1")){
       printTracos();
     
-    System.out.println("|                            INSIRA                            |");
+    System.out.println("|               R E G I S T R A R  C I D A D E ?               |");
     printTracos();
-      System.out.println("|     [0] Registrar Cidade        [1] Não Registrar Cidade     |");
+      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
       printTracos();
       continuar = sc.next();
       if (continuar.equals("0")) {
@@ -152,6 +197,323 @@ public class FuncoesPrint {
       }
     }
     return continuar;
+  }
+
+  public static String FimCadastroLVacinacao(String nome_lvacinacao, String horario, String nome_cidadelvacinacao, String uf_cidadelvacinacao) {
+    LimpaTela();
+    printTracos();
+    System.out.println("|    L O C A L  D E  V A C I N A Ç Ã O  C A D A S T R A D O    |");
+    CidadeFormatada(nome_lvacinacao);
+    printTracos();
+    String string_nome = "| Nome: "+nome_lvacinacao;
+    CentralizaString(string_nome);
+
+    String string_horario = "| Horario de Funcionamento: "+horario;
+    CentralizaString(string_horario);
+
+    String string_nome_clvacinacao = "| Localizado em: "+nome_cidadelvacinacao+"-"+uf_cidadelvacinacao;
+    CentralizaString(string_nome_clvacinacao);
+    String continuar = "";
+    while(!continuar.equals("0") || !continuar.equals("1")){
+      printTracos();
+    
+    System.out.println("|    R E G I S T R A R  L O C A L  D E  V A C I N A Ç Ã O ?    |");
+    printTracos();
+      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
+      printTracos();
+      continuar = sc.next();
+      if (continuar.equals("0")) {
+        CadastroFeito();
+        break;
+      }
+      else if (continuar.equals("1")) {
+        CadastroCancelado();
+        break;
+      }
+      else{
+        PrintErro();
+      }
+    }
+    return continuar;
+  }
+
+  public static String FimCadastroPaciente(Paciente paciente, Cidade cidade, LocalVacinacao localvacinacao) {
+    LimpaTela();
+    printTracos();
+    System.out.println("|             P A C I E N T E  C A D A S T R A D O             |");
+    CidadeFormatada(paciente.getNome());
+    printTracos();
+    String string_nome = "| Nome: "+paciente.getNome();
+    CentralizaString(string_nome);
+
+    String string_cpf = "| CPF: "+paciente.getCpf();
+    CentralizaString(string_cpf);
+
+    String string_dataNascimento = "| Data de Nascimento: "+paciente.getDataNascimento();
+    CentralizaString(string_dataNascimento);
+
+    String string_sus = "| SUS: "+paciente.getSus();
+    CentralizaString(string_sus);
+
+    String string_prioridade = "| Prioridade: "+paciente.analisaPrioridade()+" ["+PrintPrioridade(paciente)+"]";
+    CentralizaString(string_prioridade);
+
+    String string_cidade = "| Reside em: "+cidade.getNome()+"-"+cidade.getUF();
+    CentralizaString(string_cidade);
+
+    String string_localvacinacao = "| Será vacinado em: "+localvacinacao.getNome();
+    CentralizaString(string_localvacinacao);
+
+    String continuar = "";
+
+    while(!continuar.equals("0") || !continuar.equals("1")){
+      printTracos();
+    
+    System.out.println("|             R E G I S T R A R  P A C I E N T E ?             |");
+    printTracos();
+      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
+      printTracos();
+      continuar = sc.next();
+      if (continuar.equals("0")) {
+        CadastroFeito();
+        break;
+      }
+      else if (continuar.equals("1")) {
+        paciente.setNome("ERRO");
+        paciente.setCpf("ERRO");
+        CadastroCancelado();
+        break;
+      }
+      else{
+        PrintErro();
+      }
+    }
+    return continuar;
+  }
+
+  public static String FimCadastroMedico(Medico medico, Cidade cidade, LocalVacinacao localvacinacao) {
+    //nome_medico, cpf, dataNascimento, cidades.get(cidade_medico), tipoPrioridade,locaisVacinacao.get(localvacinacao), crm, matricula, senha
+    LimpaTela();
+    printTracos();
+    System.out.println("|               M É D I C O  C A D A S T R A D O               |");
+    CidadeFormatada(medico.getNome());
+    printTracos();
+    String string_nome = "| Nome: "+medico.getNome();
+    CentralizaString(string_nome);
+
+    String string_cpf = "| CPF: "+medico.getCpf();
+    CentralizaString(string_cpf);
+
+    String string_dataNascimento = "| Data de Nascimento: "+medico.getDataNascimento();
+    CentralizaString(string_dataNascimento);
+
+    String string_matricula = "| Matrícula: "+medico.getMatricula();
+    CentralizaString(string_matricula);
+
+    String string_crm = "| CRM: "+medico.getCrm();
+    CentralizaString(string_crm);
+
+    String nivel_prioridade = "Alta";
+
+    String string_prioridade = "| Prioridade: "+medico.analisaPrioridade()+" ["+nivel_prioridade+"]";
+    CentralizaString(string_prioridade);
+
+    String string_cidade = "| Reside em: "+cidade.getNome()+"-"+cidade.getUF();
+    CentralizaString(string_cidade);
+
+    String string_localvacinacao = "| Trabalhará em: "+localvacinacao.getNome();
+    CentralizaString(string_localvacinacao);
+
+    String continuar = "";
+
+    while(!continuar.equals("0") || !continuar.equals("1")){
+      printTracos();
+    
+    System.out.println("|               R E G I S T R A R  M E D I C O ?               |");
+    printTracos();
+      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
+      printTracos();
+      continuar = sc.next();
+      if (continuar.equals("0")) {
+        CadastroFeito();
+        break;
+      }
+      else if (continuar.equals("1")) {
+        medico.setNome("ERRO");
+        medico.setCpf("ERRO");
+        CadastroCancelado();
+        break;
+      }
+      else{
+        PrintErro();
+      }
+    }
+    return continuar;
+  }
+
+   public static String FimCadastroEnfermeiro(Enfermeiro enfermeiro, Cidade cidade, LocalVacinacao localvacinacao) {
+    //nome_enfermeiro, cpf, dataNascimento, cidades.get(cidade_enfermeiro), tipoPrioridade, cre, locaisVacinacao.get(localvacinacao), matricula, senha
+    LimpaTela();
+    printTracos();
+    System.out.println("|           E N F E R M E I R O  C A D A S T R A D O           |");
+    CidadeFormatada(enfermeiro.getNome());
+    printTracos();
+    String string_nome = "| Nome: "+enfermeiro.getNome();
+    CentralizaString(string_nome);
+
+    String string_cpf = "| CPF: "+enfermeiro.getCpf();
+    CentralizaString(string_cpf);
+
+    String string_dataNascimento = "| Data de Nascimento: "+enfermeiro.getDataNascimento();
+    CentralizaString(string_dataNascimento);
+
+    String string_matricula = "| Matrícula: "+enfermeiro.getMatricula();
+    CentralizaString(string_matricula);
+
+    String string_cre = "| CRE: "+enfermeiro.getCre();
+    CentralizaString(string_cre);
+
+    String nivel_prioridade = "Alta";
+
+    String string_prioridade = "| Prioridade: "+enfermeiro.analisaPrioridade()+" ["+nivel_prioridade+"]";
+    CentralizaString(string_prioridade);
+
+    String string_cidade = "| Reside em: "+cidade.getNome()+"-"+cidade.getUF();
+    CentralizaString(string_cidade);
+
+    String string_localvacinacao = "| Trabalhará em: "+localvacinacao.getNome();
+    CentralizaString(string_localvacinacao);
+
+    String continuar = "";
+
+    while(!continuar.equals("0") || !continuar.equals("1")){
+      printTracos();
+    
+    System.out.println("|           R E G I S T R A R  E N F E R M E I R O ?           |");
+    printTracos();
+      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
+      printTracos();
+      continuar = sc.next();
+      if (continuar.equals("0")) {
+        CadastroFeito();
+        break;
+      }
+      else if (continuar.equals("1")) {
+        enfermeiro.setNome("ERRO");
+        enfermeiro.setCpf("ERRO");
+        CadastroCancelado();
+        break;
+      }
+      else{
+        PrintErro();
+      }
+    }
+    return continuar;
+  }
+
+  public static String FimCadastroAmpola(Ampola ampola) {
+    //abricante, eficacia, lote, validade, prazo
+    LimpaTela();
+    printTracos();
+    System.out.println("|               A M P O L A  C A D A S T R A D A               |");
+    CidadeFormatada(ampola.getFabricante());
+    printTracos();
+    String string_fabricante = "| Fabricante: "+ampola.getFabricante();
+    CentralizaString(string_fabricante);
+
+    String string_eficacia = "| Eficácia: "+ampola.getEficacia();
+    CentralizaString(string_eficacia);
+
+    String string_lote = "| Lote: "+ampola.getLote();
+    CentralizaString(string_lote);
+
+    String string_validade = "| Validade do Lote: "+ampola.getValidade();
+    CentralizaString(string_validade);
+
+    String string_prazo = "| Prazo da Ampola: "+ampola.getPrazo();
+    CentralizaString(string_prazo);
+
+    String continuar = "";
+
+    while(!continuar.equals("0") || !continuar.equals("1")){
+      printTracos();
+    
+    System.out.println("|               R E G I S T R A R  A M P O L A ?               |");
+    printTracos();
+      System.out.println("|        [0] Registrar                [1] Não Registrar        |");
+      printTracos();
+      continuar = sc.next();
+      if (continuar.equals("0")) {
+        CadastroFeito();
+        break;
+      }
+      else if (continuar.equals("1")) {
+        CadastroCancelado();
+        break;
+      }
+      else{
+        PrintErro();
+      }
+    }
+    return continuar;
+  }
+  public static String FimEstoqueVacina(String nome_localVacinacao, int numAmpola, String fabricante) {
+    LimpaTela();
+    printTracos();
+    System.out.println("|             A M P O L A S  A D I C I O N A D A S             |");
+    printTracos();
+    
+    String string_fabricante = "| Fabricante: "+fabricante;
+    CentralizaString(string_fabricante);
+
+    String string_quantidade = "| Quantidade: "+numAmpola+" unidades";
+    CentralizaString(string_quantidade);
+
+    String continuar = "";
+
+    while(!continuar.equals("0") || !continuar.equals("1")){
+      printTracos();
+    
+    System.out.println("|              A D I C I O N A R  A M P O L A S ?              |");
+    printTracos();
+      System.out.println("|        [0] Adicionar                [1] Não Adicionar        |");
+      printTracos();
+      continuar = sc.next();
+      if (continuar.equals("0")) {
+        LimpaTela();
+        FuncoesPrint.printTracos();
+        System.out.println("|             A M P O L A S  A D I C I O N A D A S             |");
+        FuncoesPrint.printTracos();
+        break;
+      }
+      else if (continuar.equals("1")) {
+        LimpaTela();
+        FuncoesPrint.printTracos();
+        System.out.println("|         A M P O L A S  N Ã O  A D I C I O N A D A S          |");
+        FuncoesPrint.printTracos();
+        break;
+      }
+      else{
+        PrintErro();
+      }
+    }
+    return continuar;
+  }
+
+  public static void PrintFila(HashMap<String,ArrayList<Pessoa>> fila, String chave, int value, int j) {
+    String string_posicao = "| "+(j+1)+".";
+    String string_nome = " Nome: "+(fila.get(chave).get(value).getNome());
+    CentralizaString(string_posicao+string_nome);
+
+    String string_cpf = "|    CPF: "+(fila.get(chave).get(value).getCpf());
+    CentralizaString(string_cpf);
+
+    //String string_prioridade = (((fila.get(chave)).get(value)).getTipoPrioridade());
+
+    //String string_prioridade
+    String prioridade_string = "|    Prioridade: "+(((fila.get(chave)).get(value)).getTipoPrioridade())+" ["+PrintPrioridade(fila.get(chave).get(value))+"]";
+    CentralizaString(prioridade_string);
+    printTracos();
   }
 
   public static void CadastroFeito() {
@@ -166,47 +528,6 @@ public class FuncoesPrint {
     FuncoesPrint.printTracos();
     System.out.println("|              C A D A S T R O  C A N C E L A D O              |");
     FuncoesPrint.printTracos();
-  }
-
-  public static String FimCadastroLVacincao(String nome_lvacinacao, String horario, int estoque_lvacinacao, String nome_cidadelvacinacao, String uf_cidadelvacinacao) {
-    LimpaTela();
-    printTracos();
-    System.out.println("|    L O C A L  D E  V A C I N A Ç Ã O  C A D A S T R A D O    |");
-    CidadeFormatada(nome_lvacinacao);
-    printTracos();
-    String string_nome = "| Nome: "+nome_lvacinacao;
-    CentralizaString(string_nome);
-
-    String string_horario = "| Horario: "+horario;
-    CentralizaString(string_horario);
-
-    String string_estoque_lvacinacao = "| Estoque de vacinas: "+estoque_lvacinacao;
-    CentralizaString(string_estoque_lvacinacao);
-
-    String string_nome_clvacinacao = "| Cidade em que está situado: "+nome_cidadelvacinacao+"-"+uf_cidadelvacinacao;
-    CentralizaString(string_nome_clvacinacao);
-    String continuar = "";
-    while(!continuar.equals("0") || !continuar.equals("1")){
-      printTracos();
-    
-    System.out.println("|                            INSIRA                            |");
-    printTracos();
-      System.out.println("|[0] Registrar L de Vacinação  [1] Não Registrar L de Vacinação|");
-      printTracos();
-      continuar = sc.next();
-      if (continuar.equals("0")) {
-        CadastroFeito();
-        break;
-      }
-      else if (continuar.equals("1")) {
-        CadastroCancelado();
-        break;
-      }
-      else{
-        PrintErro();
-      }
-    }
-    return continuar;
   }
 
   public static String MenuLocalVacinacao() {
@@ -245,6 +566,7 @@ public class FuncoesPrint {
   }
 
   public static int MenuPrioridades(){
+    LimpaTela();
     printTracos();
     System.out.println("|                M E N U  P R I O R I D A D E S                |");
     printTracos();
@@ -285,5 +607,59 @@ public class FuncoesPrint {
     printTracos();
     System.out.print("\n");
     return "";
+  }
+
+  public static void MatriculaInexistente() {
+    LimpaTela();
+    printTracos();
+    System.out.println("|           M A T R I C U L A  I N E X I S T E N T E           |");
+    printTracos();
+  }
+
+  public static void SenhaIncorreta() {
+    LimpaTela();
+    printTracos();
+    System.out.println("|                 S E N H A  I N C O R R E T A                 |");
+    printTracos();
+  }
+
+  public static void NaoVacinado(LocalVacinacao local) {
+    FuncoesPrint.LimpaTela();
+    FuncoesPrint.printTracos();
+		System.out.println("| P A C I E N T E  N Ã O  P Ô D E  S E R  V A C I N A D O |");
+    System.out.println("|                N Ã O  H Á  A M P O L A S  E M                |");
+    FuncoesPrint.CidadeFormatada(local.getNome());
+    FuncoesPrint.printTracos();
+  }
+
+  public static void Imunizado(int num){
+    if (num == 0) {
+      FuncoesPrint.LimpaTela();
+      FuncoesPrint.printTracos();
+			System.out.println("| P E S S O A  P A R C I A L M E N T E  I M U N I Z A D A |");
+      FuncoesPrint.printTracos();
+    }
+
+    else if (num == 1) {
+      FuncoesPrint.LimpaTela();
+      FuncoesPrint.printTracos();
+			System.out.println("|                P E S S O A  I M U N I Z A D A                |");
+      FuncoesPrint.printTracos();
+    }
+
+    else if (num == 2) {
+      FuncoesPrint.LimpaTela();
+      FuncoesPrint.printTracos();
+			System.out.println("|    E S S A  P E S S O A  J Á  E S T Á  I M U N I Z A D A     |");
+      FuncoesPrint.printTracos();
+    }
+    
+    else if (num == 3 ) {
+      FuncoesPrint.LimpaTela();
+      FuncoesPrint.printTracos();
+			System.out.println("|           P E S S O A  N Ã O  E N C O N T R A D A            |");
+      FuncoesPrint.printTracos();
+    }
+  
   }
 }
